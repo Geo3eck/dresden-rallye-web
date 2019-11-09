@@ -21,40 +21,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+    
+    
+  <link rel="stylesheet" href="style.css" />
   <style>
-    #KarteMitPunkt {
-      height: 480px;
-    }
-
-    .info {
-      padding: 6px 8px;
-      font: 14px/16px Arial, Helvetica, sans-serif;
-      background: white;
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      border-radius: 5px;
-    }
-
-    .info h4 {
-      margin: 0 0 5px;
-      color: #777;
-    }
-
-    .mapOverlayContainer {
-      position: relative;
-    }
-
-    .mapOverlay {
-      overflow: hidden;
-      background-color: #ffffff;
-      border-radius: 1em;
-      padding: 1em;
-      margin: 1em;
-
-      position: absolute;
-      z-index: 1000;
-      right: 0;
-    }
+    
   </style>
 </head>
 
@@ -147,9 +118,9 @@
 
       var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
       // Hintergrundkarte setzen
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(karte);
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a>'
+}).addTo(karte);
 
       var geoJsonDaten = {
         "type": "FeatureCollection",
