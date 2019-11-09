@@ -2,127 +2,221 @@
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Dresden Rallye: Challenge your daily route</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin="" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
-    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-    crossorigin=""></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-    
-    
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    
-  </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Dresden Rallye: Challenge your daily route</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito|Roboto|Titillium+Web|Work+Sans&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .dropDown {
+            padding: 20px;
+            background-color: #fefefe;
+            border-bottom: 2px solid #393e41;
+            border-left: 2px solid #393e41;
+            border-right: 2px solid #393e41;
+            display: none;
+
+        }
+
+        .selector {
+            position: absolute;
+            padding: 10px;
+            left: 50%;
+            /*border-radius: 10px;*/
+            background-color: #393e41;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            cursor: pointer;
+            z-index: 1005;
+            font-size: 1.1em;
+            font-weight: 300;
+            color: #fefefe;
+        }
+
+        #eingabeForm {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            grid-gap: 20px;
+        }
+
+        #eingabeForm div:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1 / 3;
+        }
+
+        .logo {
+            margin: 0 5px 5px 0;
+        }
+
+        .infoText {
+            height: 100%;
+            display: inline;
+            vertical-align: middle;
+        }
+
+        .btn {
+            display: inline-block;
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #fefefe;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            margin: 0 10px 0 0;
+            background-color: #393e41;
+        }
+        
+        .btn:hover{
+            background-color: #5d6163;
+            color: #fefefe;
+        }
+
+    </style>
 </head>
 
 <body>
-  <div class="mapOverlayContainer">
-    <div class="container">
-      <div class="row">
-        <div class="mapOverlay">
-          <div class="row">
-            <div class='col-sm-6'>
-              <div class="row">
-                <div class='col-sm-12'>
-                  früheste Abfahrtzeit
+
+
+
+    <div class="mapOverlayContainer">
+        <div class="container">
+            <div class="row" style="background-color:#eeeeee;            border-bottom: 2px solid #393e41; line-height: 1;padding:10px 5px 5px 0;">
+                <img src="https://placehold.it/250x50/393e41/ffffff?text=Logo" class="logo" align="left" />
+                <div class="infoText">
+                    Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular ausfüllen und wir fordern dich heraus! Finde eine Route, die die Kriterien erfüllt und entdecke dabei vielleicht sogar neue Orte.
                 </div>
-                <div class='col-sm-12'>
-                  <div class="form-group">
-                    <div class='input-group date' id='startdatumsauswahl'>
-                      <input type='text' class="form-control" style="z-index: inherit 9;" />
-                      <span class="input-group-addon">
+            </div>
+            <div class="row">
+                <div class="dropDown">
+
+                    <div id="eingabeForm">
+
+                        <div>
+                            Startort
+                            <div class="form-group">
+                                <div class='input-group location'>
+                                    <input id='startauswahl' type='text' class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            Zielort
+                            <div class="form-group">
+                                <div class='input-group location'>
+                                    <input id='endauswahl' type='text' class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <form>
+
+                                Schwierigkeitsgrad wählen:
+                                <fieldset>
+                                    <input type="radio" id="option1" name="Level" value="1">
+                                    <label for="leicht">Leicht</label>
+                                    <input type="radio" id="option2" name="Level" value="2">
+                                    <label for="normal">Normal</label>
+                                    <input type="radio" id="option3" name="Level" value="3">
+                                    <label for="exrem">Extrem</label>
+                                </fieldset>
+                                <br /> Wie viel Zeit hast du?
+                                <fieldset>
+                                    <input type="radio" id="option1" name="Zeit" value="1">
+                                    <label for="viel">Viel</label>
+                                    <input type="radio" id="option2" name="Zeit" value="2">
+                                    <label for="wenig">Wenig</label>
+                                    <input type="radio" id="option3" name="Zeit" value="3">
+                                    <label for="keine">Gar keine</label>
+                                </fieldset>
+                                <br />
+                                <input type="checkbox">
+                                <label class="custom-control-label" for="customSwitches">Hast du einen Schrittzähler?</label>
+                            </form>
+
+                        </div>
+                        <div></div>
+
+                        <div>
+                            früheste Abfahrtzeit
+                            <div class="form-group">
+                                <div class='input-group date' id='startdatumsauswahl'>
+                                    <input type='text' class="form-control" style="z-index: inherit 9;" />
+                                    <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class='col-sm-12'>
-                    späteste Ankunftszeit
-                  </div>
-                  <div class='col-sm-12'>
-                    <div class="form-group">
-                      <div class='input-group date' id='enddatumsauswahl'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            späteste Ankunftszeit
+                            <div class="form-group">
+                                <div class='input-group date' id='enddatumsauswahl'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
                           <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='col-sm-6'>
-              <div class="row">
-                  <div class='col-sm-12'>
-                      Startort
-                    </div>
-                  <div class="form-group">
-                  <div class='input-group location'>
-                    <input id='startauswahl' type='text' class="form-control" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                  <div class='col-sm-12'>
-                      Zielort
-                    </div>
-                  <div class="form-group">
-                  <div class='input-group location'>
-                    <input id='endauswahl' type='text' class="form-control" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <form>
-            <p>Wie viel Zeit hast du?</p>
-            <fieldset>
-              <input type="radio" id="option1" name="Zahlmethode" value="1">
-              <label for="mc">Viel</label>
-              <input type="radio" id="option2" name="Zahlmethode" value="2">
-              <label for="vi">Wenig</label>
-              <input type="radio" id="option3" name="Zahlmethode" value="3">
-              <label for="ae">Gar nicht</label>
-            </fieldset>
-          </form>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div style="vertical-align:bottom;text-align: right;"><button class="btn">Start</button>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="selector">
+                    Challenge me!
+                </div>
+
+            </div>
+            <div class="row">
+                <div class='col-sm-12' id="KarteMitPunkt" />
+            </div>
         </div>
-        <div class='col-sm-12' id="KarteMitPunkt" />
-      </div>
-    </div>
-    <script>
-      // Karte mit Mittelpunkt Dresden erzeugen
-      var laengenGrad = 13.7681437;
-      var breitenGrad = 51.0493286;
-      var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
-      var zoomStufe = 13;
-      var minDate = moment();
-      var maxDate = moment();
-      maxDate.add('1', 'hour');
+        <script>
+            // Karte mit Mittelpunkt Dresden erzeugen
+            var laengenGrad = 13.74291803;
+            var breitenGrad = 51.04991538;
+            var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
+            var zoomStufe = 13;
+            var minDate = moment();
+            var maxDate = moment();
+            maxDate.add('1', 'hour');
 
-      var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
-      // Hintergrundkarte setzen
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a>'
-}).addTo(karte);
+            var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
+            // Hintergrundkarte setzen
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a>'
+            }).addTo(karte);
 
-      var optionen = {
+            var optionen = {
         filter: function (feature, layer) {
           return moment(feature.properties.coordTimes).isBetween(minDate, maxDate);
         }
@@ -224,7 +318,13 @@
 			}));
 		}
 		Promise.all(promises).then(dataList => handleGeoJsonLayers(dataList));
-    </script>
+
+
+            $('.selector').click(function() {
+                $('.dropDown').slideToggle(300);
+            });
+
+        </script>
 </body>
 
 </html>
