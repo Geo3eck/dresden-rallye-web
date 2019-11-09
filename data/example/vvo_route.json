@@ -1,0 +1,1774 @@
+{
+    "SessionId": "890275734:efa3",
+    "Status": {
+        "Code": "Ok"
+    },
+    "Routes": [
+        {
+            "PriceLevel": 1,
+            "Price": "2,40",
+            "Duration": 48,
+            "Interchanges": 2,
+            "MotChain": [
+                {
+                    "Type": "Bus",
+                    "Name": "61",
+                    "Direction": " Löbtau",
+                    "Changes": [
+                        "6350"
+                    ],
+                    "Diva": {
+                        "Number": "21061",
+                        "Network": "voe"
+                    }
+                },
+                {
+                    "Type": "Tram",
+                    "Name": "8",
+                    "Direction": " Hellerau",
+                    "Changes": [
+                        "4054"
+                    ],
+                    "Diva": {
+                        "Number": "11008",
+                        "Network": "voe"
+                    }
+                },
+                {
+                    "Type": "Tram",
+                    "Name": "13",
+                    "Direction": " Prohlis",
+                    "Changes": [],
+                    "Diva": {
+                        "Number": "11013",
+                        "Network": "voe"
+                    }
+                }
+            ],
+            "FareZoneOrigin": 10,
+            "FareZoneDestination": 10,
+            "MapPdfId": "VVO_5DC728E40",
+            "RouteId": 0,
+            "PartialRoutes": [
+                {
+                    "PartialRouteId": 0,
+                    "Duration": 2,
+                    "Mot": {
+                        "Type": "Bus",
+                        "Name": "61",
+                        "Direction": " Löbtau",
+                        "Changes": [
+                            "6350"
+                        ],
+                        "Diva": {
+                            "Number": "21061",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 0,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573336260000-0000)/",
+                            "DepartureTime": "/Date(1573336260000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Staats- und Universitätsbibliothek",
+                            "Type": "Stop",
+                            "DataId": "33000728",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656332,
+                            "Longitude": 4621971,
+                            "MapPdfId": "VVO_5DC728E41",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573336320000-0000)/",
+                            "DepartureTime": "/Date(1573336320000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Technische Universität (Fr.-Foerster-Platz)",
+                            "Type": "Stop",
+                            "DataId": "33000727",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656412,
+                            "Longitude": 4621555,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573336380000-0000)/",
+                            "DepartureTime": "/Date(1573336380000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Nürnberger Platz",
+                            "Type": "Stop",
+                            "DataId": "33000132",
+                            "Platform": {
+                                "Name": "6",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656643,
+                            "Longitude": 4621195,
+                            "MapPdfId": "VVO_5DC728E42",
+                            "CancelReasons": []
+                        }
+                    ]
+                },
+                {
+                    "PartialRouteId": 1,
+                    "Duration": 16,
+                    "Mot": {
+                        "Type": "Tram",
+                        "Name": "8",
+                        "Direction": " Hellerau",
+                        "Changes": [
+                            "4054"
+                        ],
+                        "Diva": {
+                            "Number": "11008",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 2,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573337640000-0000)/",
+                            "DepartureTime": "/Date(1573337640000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Nürnberger Platz",
+                            "Type": "Stop",
+                            "DataId": "33000132",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656647,
+                            "Longitude": 4621197,
+                            "MapPdfId": "VVO_5DC728E42",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337700000-0000)/",
+                            "DepartureTime": "/Date(1573337700000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Reichenbachstraße",
+                            "Type": "Stop",
+                            "DataId": "33000131",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656980,
+                            "Longitude": 4621534,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337820000-0000)/",
+                            "DepartureTime": "/Date(1573337820000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Hauptbahnhof",
+                            "Type": "Stop",
+                            "DataId": "33000028",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657497,
+                            "Longitude": 4621685,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337880000-0000)/",
+                            "DepartureTime": "/Date(1573337880000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Hauptbahnhof Nord",
+                            "Type": "Stop",
+                            "DataId": "33000032",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657694,
+                            "Longitude": 4621797,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337940000-0000)/",
+                            "DepartureTime": "/Date(1573337940000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Walpurgisstraße",
+                            "Type": "Stop",
+                            "DataId": "33000029",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657982,
+                            "Longitude": 4621985,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338060000-0000)/",
+                            "DepartureTime": "/Date(1573338060000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Pirnaischer Platz",
+                            "Type": "Stop",
+                            "DataId": "33000005",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658531,
+                            "Longitude": 4622377,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338120000-0000)/",
+                            "DepartureTime": "/Date(1573338180000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Synagoge",
+                            "Type": "Stop",
+                            "DataId": "33000015",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658957,
+                            "Longitude": 4622608,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338300000-0000)/",
+                            "DepartureTime": "/Date(1573338300000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Carolaplatz",
+                            "Type": "Stop",
+                            "DataId": "33000014",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5659555,
+                            "Longitude": 4622511,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338420000-0000)/",
+                            "DepartureTime": "/Date(1573338420000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Albertplatz",
+                            "Type": "Stop",
+                            "DataId": "33000013",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660123,
+                            "Longitude": 4622535,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338480000-0000)/",
+                            "DepartureTime": "/Date(1573338480000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Louisenstraße",
+                            "Type": "Stop",
+                            "DataId": "33000261",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660630,
+                            "Longitude": 4622585,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338600000-0000)/",
+                            "DepartureTime": "/Date(1573338600000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Bischofsweg",
+                            "Type": "Stop",
+                            "DataId": "33000262",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5661009,
+                            "Longitude": 4622784,
+                            "MapPdfId": "VVO_5DC728E43",
+                            "CancelReasons": []
+                        }
+                    ]
+                },
+                {
+                    "PartialRouteId": 2,
+                    "Duration": 2,
+                    "Mot": {
+                        "Type": "Tram",
+                        "Name": "13",
+                        "Direction": " Prohlis",
+                        "Changes": [],
+                        "Diva": {
+                            "Number": "11013",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 4,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573339020000-0000)/",
+                            "DepartureTime": "/Date(1573339020000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Bischofsweg",
+                            "Type": "Stop",
+                            "DataId": "33000262",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5661057,
+                            "Longitude": 4622762,
+                            "MapPdfId": "VVO_5DC728E43",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339140000-0000)/",
+                            "DepartureTime": "/Date(1573339140000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Alaunplatz",
+                            "Type": "Stop",
+                            "DataId": "33000263",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660883,
+                            "Longitude": 4623163,
+                            "MapPdfId": "VVO_5DC728E44",
+                            "CancelReasons": []
+                        }
+                    ]
+                }
+            ],
+            "MapData": [
+                "Bus|5656331|4621971|5656332|4621947|5656338|4621858|5656342|4621761|5656364|4621653|5656395|4621577|5656411|4621553|5656411|4621553|5656418|4621543|5656432|4621520|5656443|4621504|5656453|4621488|5656467|4621469|5656558|4621329|5656561|4621317|5656581|4621287|5656599|4621263|5656606|4621253|5656613|4621243|5656634|4621214|5656647|4621196|",
+                "Footpath|5656647|4621196|",
+                "Tram|5656647|4621195|5656634|4621214|5656624|4621231|5656617|4621247|5656616|4621256|5656618|4621265|5656624|4621283|5656685|4621390|5656701|4621415|5656726|4621442|5656748|4621458|5656763|4621468|5656782|4621478|5656900|4621517|5656979|4621539|5656979|4621539|5657040|4621555|5657079|4621567|5657237|4621609|5657382|4621647|5657402|4621649|5657416|4621649|5657428|4621650|5657434|4621652|5657484|4621677|5657484|4621677|5657497|4621684|5657555|4621712|5657573|4621722|5657589|4621732|5657611|4621746|5657639|4621759|5657693|4621793|5657693|4621793|5657702|4621797|5657732|4621815|5657799|4621853|5657891|4621917|5657933|4621948|5657982|4621984|5657982|4621984|5658021|4622014|5658176|4622138|5658240|4622191|5658279|4622223|5658347|4622282|5658358|4622291|5658377|4622301|5658414|4622319|5658477|4622350|5658552|4622386|5658552|4622386|5658575|4622398|5658588|4622406|5658596|4622410|5658608|4622421|5658622|4622431|5658628|4622440|5658630|4622440|5658639|4622450|5658661|4622474|5658683|4622494|5658693|4622501|5658702|4622508|5658766|4622541|5658816|4622567|5658852|4622582|5658870|4622587|5658889|4622591|5658902|4622595|5658938|4622601|5658957|4622606|5658957|4622606|5658967|4622608|5658991|4622612|5659010|4622614|5659022|4622614|5659036|4622614|5659059|4622612|5659092|4622606|5659389|4622527|5659436|4622516|5659442|4622513|5659473|4622505|5659512|4622508|5659521|4622508|5659557|4622511|5659556|4622511|5659574|4622512|5659579|4622513|5659596|4622513|5659625|4622511|5659727|4622504|5659732|4622503|5659776|4622500|5659875|4622493|5659969|4622486|5659991|4622485|5659999|4622485|5660006|4622485|5660011|4622486|5660019|4622487|5660024|4622487|5660027|4622488|5660032|4622488|5660034|4622489|5660040|4622490|5660046|4622492|5660054|4622494|5660064|4622499|5660123|4622535|5660123|4622533|5660135|4622541|5660149|4622549|5660168|4622552|5660189|4622552|5660242|4622554|5660287|4622554|5660445|4622558|5660503|4622560|5660616|4622585|5660627|4622589|5660627|4622589|5660666|4622606|5660738|4622641|5660773|4622657|5660863|4622705|5661010|4622784|",
+                "Footpath|5661010|4622784|5661005|4622785|5661004|4622785|5661006|4622786|5661005|4622787|5661003|4622791|5661005|4622792|5661021|4622800|5661022|4622802|5661026|4622804|5661029|4622799|5661030|4622798|5661030|4622797|5661034|4622790|5661038|4622789|5661040|4622787|5661042|4622785|5661046|4622768|5661050|4622753|5661056|4622757|5661057|4622758|5661058|4622762|",
+                "Tram|5661056|4622761|5661052|4622782|5661046|4622808|5660993|4622920|5660913|4623103|5660886|4623164|"
+            ]
+        },
+        {
+            "PriceLevel": 1,
+            "Price": "2,40",
+            "Duration": 49,
+            "Interchanges": 1,
+            "MotChain": [
+                {
+                    "Type": "Bus",
+                    "Name": "61",
+                    "Direction": " Löbtau",
+                    "Changes": [
+                        "6350"
+                    ],
+                    "Diva": {
+                        "Number": "21061",
+                        "Network": "voe"
+                    }
+                },
+                {
+                    "Type": "Tram",
+                    "Name": "8",
+                    "Direction": " Hellerau",
+                    "Changes": [
+                        "4054"
+                    ],
+                    "Diva": {
+                        "Number": "11008",
+                        "Network": "voe"
+                    }
+                },
+                {
+                    "Type": "Footpath",
+                    "Name": "Fussweg",
+                    "Changes": [],
+                    "Diva": {
+                        "Number": "",
+                        "Network": ""
+                    }
+                }
+            ],
+            "FareZoneOrigin": 10,
+            "FareZoneDestination": 10,
+            "MapPdfId": "VVO_5DC728E45",
+            "RouteId": 1,
+            "PartialRoutes": [
+                {
+                    "PartialRouteId": 0,
+                    "Duration": 2,
+                    "Mot": {
+                        "Type": "Bus",
+                        "Name": "61",
+                        "Direction": " Löbtau",
+                        "Changes": [
+                            "6350"
+                        ],
+                        "Diva": {
+                            "Number": "21061",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 0,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573336260000-0000)/",
+                            "DepartureTime": "/Date(1573336260000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Staats- und Universitätsbibliothek",
+                            "Type": "Stop",
+                            "DataId": "33000728",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656332,
+                            "Longitude": 4621971,
+                            "MapPdfId": "VVO_5DC728E46",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573336320000-0000)/",
+                            "DepartureTime": "/Date(1573336320000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Technische Universität (Fr.-Foerster-Platz)",
+                            "Type": "Stop",
+                            "DataId": "33000727",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656412,
+                            "Longitude": 4621555,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573336380000-0000)/",
+                            "DepartureTime": "/Date(1573336380000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Nürnberger Platz",
+                            "Type": "Stop",
+                            "DataId": "33000132",
+                            "Platform": {
+                                "Name": "6",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656643,
+                            "Longitude": 4621195,
+                            "MapPdfId": "VVO_5DC728E47",
+                            "CancelReasons": []
+                        }
+                    ]
+                },
+                {
+                    "PartialRouteId": 1,
+                    "Duration": 16,
+                    "Mot": {
+                        "Type": "Tram",
+                        "Name": "8",
+                        "Direction": " Hellerau",
+                        "Changes": [
+                            "4054"
+                        ],
+                        "Diva": {
+                            "Number": "11008",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 2,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573337640000-0000)/",
+                            "DepartureTime": "/Date(1573337640000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Nürnberger Platz",
+                            "Type": "Stop",
+                            "DataId": "33000132",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656647,
+                            "Longitude": 4621197,
+                            "MapPdfId": "VVO_5DC728E47",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337700000-0000)/",
+                            "DepartureTime": "/Date(1573337700000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Reichenbachstraße",
+                            "Type": "Stop",
+                            "DataId": "33000131",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656980,
+                            "Longitude": 4621534,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337820000-0000)/",
+                            "DepartureTime": "/Date(1573337820000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Hauptbahnhof",
+                            "Type": "Stop",
+                            "DataId": "33000028",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657497,
+                            "Longitude": 4621685,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337880000-0000)/",
+                            "DepartureTime": "/Date(1573337880000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Hauptbahnhof Nord",
+                            "Type": "Stop",
+                            "DataId": "33000032",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657694,
+                            "Longitude": 4621797,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337940000-0000)/",
+                            "DepartureTime": "/Date(1573337940000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Walpurgisstraße",
+                            "Type": "Stop",
+                            "DataId": "33000029",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657982,
+                            "Longitude": 4621985,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338060000-0000)/",
+                            "DepartureTime": "/Date(1573338060000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Pirnaischer Platz",
+                            "Type": "Stop",
+                            "DataId": "33000005",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658531,
+                            "Longitude": 4622377,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338120000-0000)/",
+                            "DepartureTime": "/Date(1573338180000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Synagoge",
+                            "Type": "Stop",
+                            "DataId": "33000015",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658957,
+                            "Longitude": 4622608,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338300000-0000)/",
+                            "DepartureTime": "/Date(1573338300000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Carolaplatz",
+                            "Type": "Stop",
+                            "DataId": "33000014",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5659555,
+                            "Longitude": 4622511,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338420000-0000)/",
+                            "DepartureTime": "/Date(1573338420000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Albertplatz",
+                            "Type": "Stop",
+                            "DataId": "33000013",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660123,
+                            "Longitude": 4622535,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338480000-0000)/",
+                            "DepartureTime": "/Date(1573338480000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Louisenstraße",
+                            "Type": "Stop",
+                            "DataId": "33000261",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660630,
+                            "Longitude": 4622585,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338600000-0000)/",
+                            "DepartureTime": "/Date(1573338600000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Bischofsweg",
+                            "Type": "Stop",
+                            "DataId": "33000262",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5661009,
+                            "Longitude": 4622784,
+                            "MapPdfId": "VVO_5DC728E48",
+                            "CancelReasons": []
+                        }
+                    ]
+                },
+                {
+                    "Duration": 10,
+                    "Mot": {
+                        "Type": "Footpath",
+                        "Name": "Fussweg",
+                        "Changes": [],
+                        "Diva": {
+                            "Number": "",
+                            "Network": ""
+                        }
+                    },
+                    "MapDataIndex": 3,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573338600000-0000)/",
+                            "DepartureTime": "/Date(1573338600000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Bischofsweg",
+                            "Type": "Stop",
+                            "DataId": "33000262",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5661009,
+                            "Longitude": 4622784,
+                            "MapPdfId": "VVO_5DC728E48",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339200000-0000)/",
+                            "DepartureTime": "/Date(1573339200000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Alaunplatz",
+                            "Type": "Stop",
+                            "DataId": "33000263",
+                            "Latitude": 5660886,
+                            "Longitude": 4623158,
+                            "MapPdfId": "VVO_5DC728E49",
+                            "CancelReasons": []
+                        }
+                    ]
+                }
+            ],
+            "MapData": [
+                "Bus|5656331|4621971|5656332|4621947|5656338|4621858|5656342|4621761|5656364|4621653|5656395|4621577|5656411|4621553|5656411|4621553|5656418|4621543|5656432|4621520|5656443|4621504|5656453|4621488|5656467|4621469|5656558|4621329|5656561|4621317|5656581|4621287|5656599|4621263|5656606|4621253|5656613|4621243|5656634|4621214|5656647|4621196|",
+                "Footpath|5656647|4621196|",
+                "Tram|5656647|4621195|5656634|4621214|5656624|4621231|5656617|4621247|5656616|4621256|5656618|4621265|5656624|4621283|5656685|4621390|5656701|4621415|5656726|4621442|5656748|4621458|5656763|4621468|5656782|4621478|5656900|4621517|5656979|4621539|5656979|4621539|5657040|4621555|5657079|4621567|5657237|4621609|5657382|4621647|5657402|4621649|5657416|4621649|5657428|4621650|5657434|4621652|5657484|4621677|5657484|4621677|5657497|4621684|5657555|4621712|5657573|4621722|5657589|4621732|5657611|4621746|5657639|4621759|5657693|4621793|5657693|4621793|5657702|4621797|5657732|4621815|5657799|4621853|5657891|4621917|5657933|4621948|5657982|4621984|5657982|4621984|5658021|4622014|5658176|4622138|5658240|4622191|5658279|4622223|5658347|4622282|5658358|4622291|5658377|4622301|5658414|4622319|5658477|4622350|5658552|4622386|5658552|4622386|5658575|4622398|5658588|4622406|5658596|4622410|5658608|4622421|5658622|4622431|5658628|4622440|5658630|4622440|5658639|4622450|5658661|4622474|5658683|4622494|5658693|4622501|5658702|4622508|5658766|4622541|5658816|4622567|5658852|4622582|5658870|4622587|5658889|4622591|5658902|4622595|5658938|4622601|5658957|4622606|5658957|4622606|5658967|4622608|5658991|4622612|5659010|4622614|5659022|4622614|5659036|4622614|5659059|4622612|5659092|4622606|5659389|4622527|5659436|4622516|5659442|4622513|5659473|4622505|5659512|4622508|5659521|4622508|5659557|4622511|5659556|4622511|5659574|4622512|5659579|4622513|5659596|4622513|5659625|4622511|5659727|4622504|5659732|4622503|5659776|4622500|5659875|4622493|5659969|4622486|5659991|4622485|5659999|4622485|5660006|4622485|5660011|4622486|5660019|4622487|5660024|4622487|5660027|4622488|5660032|4622488|5660034|4622489|5660040|4622490|5660046|4622492|5660054|4622494|5660064|4622499|5660123|4622535|5660123|4622533|5660135|4622541|5660149|4622549|5660168|4622552|5660189|4622552|5660242|4622554|5660287|4622554|5660445|4622558|5660503|4622560|5660616|4622585|5660627|4622589|5660627|4622589|5660666|4622606|5660738|4622641|5660773|4622657|5660863|4622705|5661010|4622784|",
+                "Footpath|5661009|4622784|5661004|4622785|5661006|4622786|5661005|4622787|5661003|4622791|5661005|4622792|5661021|4622800|5661022|4622802|5661026|4622804|5661035|4622809|5661035|4622810|5661033|4622817|5661033|4622817|5661039|4622820|5661040|4622820|5661041|4622821|5661043|4622821|5661043|4622823|5661036|4622837|5661029|4622853|5661020|4622873|5661017|4622872|5661017|4622872|5660994|4622918|5660993|4622923|5660990|4622928|5660972|4622967|5660960|4622995|5660940|4623038|5660938|4623042|5660932|4623055|5660916|4623092|5660912|4623102|5660910|4623107|5660892|4623145|5660887|4623158|5660886|4623158|"
+            ]
+        },
+        {
+            "PriceLevel": 1,
+            "Price": "2,40",
+            "Duration": 32,
+            "Interchanges": 1,
+            "MotChain": [
+                {
+                    "Type": "Bus",
+                    "Name": "61",
+                    "Direction": " Weißig",
+                    "Changes": [
+                        "6350"
+                    ],
+                    "Diva": {
+                        "Number": "21061",
+                        "Network": "voe"
+                    }
+                },
+                {
+                    "Type": "Tram",
+                    "Name": "13",
+                    "Direction": " Kaditz",
+                    "Changes": [],
+                    "Diva": {
+                        "Number": "11013",
+                        "Network": "voe"
+                    }
+                }
+            ],
+            "FareZoneOrigin": 10,
+            "FareZoneDestination": 10,
+            "MapPdfId": "VVO_5DC728E4A",
+            "RouteId": 2,
+            "PartialRoutes": [
+                {
+                    "PartialRouteId": 0,
+                    "Duration": 6,
+                    "Mot": {
+                        "Type": "Bus",
+                        "Name": "61",
+                        "Direction": " Weißig",
+                        "Changes": [
+                            "6350"
+                        ],
+                        "Diva": {
+                            "Number": "21061",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 0,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573337700000-0000)/",
+                            "DepartureTime": "/Date(1573337700000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Staats- und Universitätsbibliothek",
+                            "Type": "Stop",
+                            "DataId": "33000728",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656310,
+                            "Longitude": 4622063,
+                            "MapPdfId": "VVO_5DC728E4B",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337760000-0000)/",
+                            "DepartureTime": "/Date(1573337760000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Zellescher Weg",
+                            "Type": "Stop",
+                            "DataId": "33000312",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656248,
+                            "Longitude": 4622601,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337880000-0000)/",
+                            "DepartureTime": "/Date(1573337880000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Caspar-David-Friedrich-Straße",
+                            "Type": "Stop",
+                            "DataId": "33000784",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656068,
+                            "Longitude": 4623307,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573337940000-0000)/",
+                            "DepartureTime": "/Date(1573337940000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Wasaplatz",
+                            "Type": "Stop",
+                            "DataId": "33000115",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656267,
+                            "Longitude": 4623509,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338060000-0000)/",
+                            "DepartureTime": "/Date(1573338060000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "S-Bf. Strehlen",
+                            "Type": "Stop",
+                            "DataId": "33000757",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656583,
+                            "Longitude": 4623652,
+                            "MapPdfId": "VVO_5DC728E4C",
+                            "CancelReasons": []
+                        }
+                    ]
+                },
+                {
+                    "PartialRouteId": 1,
+                    "Duration": 21,
+                    "Mot": {
+                        "Type": "Tram",
+                        "Name": "13",
+                        "Direction": " Kaditz",
+                        "Changes": [],
+                        "Diva": {
+                            "Number": "11013",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 1,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573338360000-0000)/",
+                            "DepartureTime": "/Date(1573338360000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "S-Bf. Strehlen",
+                            "Type": "Stop",
+                            "DataId": "33000757",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656583,
+                            "Longitude": 4623652,
+                            "MapPdfId": "VVO_5DC728E4C",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338420000-0000)/",
+                            "DepartureTime": "/Date(1573338420000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Querallee",
+                            "Type": "Stop",
+                            "DataId": "33000113",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656963,
+                            "Longitude": 4623427,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338480000-0000)/",
+                            "DepartureTime": "/Date(1573338480000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Zoo",
+                            "Type": "Stop",
+                            "DataId": "33000112",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657212,
+                            "Longitude": 4623006,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338540000-0000)/",
+                            "DepartureTime": "/Date(1573338600000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Lennéplatz",
+                            "Type": "Stop",
+                            "DataId": "33000111",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657342,
+                            "Longitude": 4622645,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338660000-0000)/",
+                            "DepartureTime": "/Date(1573338660000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Georg-Arnhold-Bad",
+                            "Type": "Stop",
+                            "DataId": "33000008",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657862,
+                            "Longitude": 4622939,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573338780000-0000)/",
+                            "DepartureTime": "/Date(1573339020000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Straßburger Platz",
+                            "Type": "Stop",
+                            "DataId": "33000007",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658200,
+                            "Longitude": 4623146,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339080000-0000)/",
+                            "DepartureTime": "/Date(1573339080000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "St.-Benno-Gymnasium",
+                            "Type": "Stop",
+                            "DataId": "33000080",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658680,
+                            "Longitude": 4623321,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339140000-0000)/",
+                            "DepartureTime": "/Date(1573339140000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Dürerstraße",
+                            "Type": "Stop",
+                            "DataId": "33000009",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658896,
+                            "Longitude": 4623366,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339260000-0000)/",
+                            "DepartureTime": "/Date(1573339260000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Sachsenallee",
+                            "Type": "Stop",
+                            "DataId": "33000010",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5659208,
+                            "Longitude": 4623307,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339320000-0000)/",
+                            "DepartureTime": "/Date(1573339320000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Rosa-Luxemburg-Platz",
+                            "Type": "Stop",
+                            "DataId": "33000011",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5659716,
+                            "Longitude": 4622992,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339440000-0000)/",
+                            "DepartureTime": "/Date(1573339440000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Bautzner Straße / Rothenburger Straße",
+                            "Type": "Stop",
+                            "DataId": "33000012",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660085,
+                            "Longitude": 4622915,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339500000-0000)/",
+                            "DepartureTime": "/Date(1573339500000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Görlitzer Straße",
+                            "Type": "Stop",
+                            "DataId": "33000264",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660457,
+                            "Longitude": 4623029,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339620000-0000)/",
+                            "DepartureTime": "/Date(1573339620000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Alaunplatz",
+                            "Type": "Stop",
+                            "DataId": "33000263",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660891,
+                            "Longitude": 4623146,
+                            "MapPdfId": "VVO_5DC728E4D",
+                            "CancelReasons": []
+                        }
+                    ]
+                }
+            ],
+            "MapData": [
+                "Bus|5656311|4622063|5656309|4622076|5656294|4622296|5656286|4622380|5656255|4622579|5656248|4622600|5656248|4622600|5656195|4622797|5656090|4623104|5656079|4623140|5656063|4623187|5656057|4623206|5656051|4623258|5656055|4623278|5656068|4623307|5656068|4623307|5656074|4623320|5656114|4623361|5656145|4623393|5656227|4623507|5656253|4623502|5656267|4623507|5656267|4623507|5656268|4623507|5656280|4623512|5656295|4623520|5656451|4623590|5656452|4623611|5656469|4623621|5656493|4623609|5656522|4623624|5656557|4623640|5656573|4623646|5656582|4623651|",
+                "Tram|5656584|4623652|5656644|4623680|5656653|4623684|5656678|4623698|5656713|4623716|5656749|4623734|5656753|4623737|5656758|4623738|5656762|4623739|5656765|4623739|5656769|4623738|5656773|4623737|5656777|4623734|5656779|4623732|5656781|4623728|5656910|4623514|5656943|4623458|5656945|4623457|5656946|4623453|5656963|4623427|5656963|4623427|5656954|4623439|5656954|4623439|5656981|4623396|5657019|4623331|5657024|4623323|5657094|4623206|5657123|4623157|5657132|4623145|5657204|4623019|5657211|4623008|5657212|4623006|5657212|4623006|5657230|4622978|5657254|4622923|5657263|4622866|5657271|4622761|5657273|4622742|5657345|4622638|5657345|4622638|5657360|4622618|5657366|4622609|5657381|4622628|5657401|4622646|5657411|4622658|5657422|4622669|5657431|4622678|5657454|4622694|5657474|4622707|5657494|4622718|5657528|4622738|5657653|4622815|5657829|4622921|5657860|4622939|5657860|4622939|5657907|4622967|5657957|4622998|5657985|4623016|5658019|4623035|5658124|4623099|5658174|4623130|5658193|4623141|5658212|4623151|5658212|4623151|5658215|4623153|5658230|4623159|5658257|4623173|5658371|4623221|5658648|4623316|5658677|4623321|5658677|4623321|5658841|4623353|5658896|4623365|5658896|4623365|5658932|4623372|5659017|4623390|5659048|4623393|5659081|4623386|5659102|4623377|5659128|4623362|5659205|4623306|5659205|4623306|5659252|4623274|5659291|4623247|5659330|4623217|5659420|4623151|5659477|4623110|5659611|4623015|5659627|4623008|5659675|4623001|5659716|4622993|5659716|4622993|5659834|4622968|5659946|4622945|5660085|4622913|5660085|4622913|5660088|4622913|5660111|4622907|5660132|4622909|5660157|4622918|5660333|4622990|5660456|4623032|5660456|4623032|5660480|4623040|5660493|4623041|5660513|4623046|5660615|4623086|5660705|4623122|5660775|4623150|5660853|4623183|5660867|4623184|5660872|4623181|5660880|4623177|5660893|4623148|"
+            ]
+        },
+        {
+            "PriceLevel": 1,
+            "Price": "2,40",
+            "Duration": 32,
+            "Interchanges": 1,
+            "MotChain": [
+                {
+                    "Type": "Bus",
+                    "Name": "61",
+                    "Direction": " Weißig",
+                    "Changes": [
+                        "6350"
+                    ],
+                    "Diva": {
+                        "Number": "21061",
+                        "Network": "voe"
+                    }
+                },
+                {
+                    "Type": "Tram",
+                    "Name": "13",
+                    "Direction": " Kaditz",
+                    "Changes": [],
+                    "Diva": {
+                        "Number": "11013",
+                        "Network": "voe"
+                    }
+                }
+            ],
+            "FareZoneOrigin": 10,
+            "FareZoneDestination": 10,
+            "MapPdfId": "VVO_5DC728E4A",
+            "RouteId": 3,
+            "PartialRoutes": [
+                {
+                    "PartialRouteId": 0,
+                    "Duration": 6,
+                    "Mot": {
+                        "Type": "Bus",
+                        "Name": "61",
+                        "Direction": " Weißig",
+                        "Changes": [
+                            "6350"
+                        ],
+                        "Diva": {
+                            "Number": "21061",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 0,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573339500000-0000)/",
+                            "DepartureTime": "/Date(1573339500000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Staats- und Universitätsbibliothek",
+                            "Type": "Stop",
+                            "DataId": "33000728",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656310,
+                            "Longitude": 4622063,
+                            "MapPdfId": "VVO_5DC728E4B",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339560000-0000)/",
+                            "DepartureTime": "/Date(1573339560000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Zellescher Weg",
+                            "Type": "Stop",
+                            "DataId": "33000312",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656248,
+                            "Longitude": 4622601,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339680000-0000)/",
+                            "DepartureTime": "/Date(1573339680000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Caspar-David-Friedrich-Straße",
+                            "Type": "Stop",
+                            "DataId": "33000784",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656068,
+                            "Longitude": 4623307,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339740000-0000)/",
+                            "DepartureTime": "/Date(1573339740000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Wasaplatz",
+                            "Type": "Stop",
+                            "DataId": "33000115",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656267,
+                            "Longitude": 4623509,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573339860000-0000)/",
+                            "DepartureTime": "/Date(1573339860000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "S-Bf. Strehlen",
+                            "Type": "Stop",
+                            "DataId": "33000757",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656583,
+                            "Longitude": 4623652,
+                            "MapPdfId": "VVO_5DC728E4C",
+                            "CancelReasons": []
+                        }
+                    ]
+                },
+                {
+                    "PartialRouteId": 1,
+                    "Duration": 21,
+                    "Mot": {
+                        "Type": "Tram",
+                        "Name": "13",
+                        "Direction": " Kaditz",
+                        "Changes": [],
+                        "Diva": {
+                            "Number": "11013",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 1,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573340160000-0000)/",
+                            "DepartureTime": "/Date(1573340160000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "S-Bf. Strehlen",
+                            "Type": "Stop",
+                            "DataId": "33000757",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656583,
+                            "Longitude": 4623652,
+                            "MapPdfId": "VVO_5DC728E4C",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573340220000-0000)/",
+                            "DepartureTime": "/Date(1573340220000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Querallee",
+                            "Type": "Stop",
+                            "DataId": "33000113",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656963,
+                            "Longitude": 4623427,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573340280000-0000)/",
+                            "DepartureTime": "/Date(1573340280000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Zoo",
+                            "Type": "Stop",
+                            "DataId": "33000112",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657212,
+                            "Longitude": 4623006,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573340340000-0000)/",
+                            "DepartureTime": "/Date(1573340400000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Lennéplatz",
+                            "Type": "Stop",
+                            "DataId": "33000111",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657342,
+                            "Longitude": 4622645,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573340460000-0000)/",
+                            "DepartureTime": "/Date(1573340460000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Georg-Arnhold-Bad",
+                            "Type": "Stop",
+                            "DataId": "33000008",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657862,
+                            "Longitude": 4622939,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573340580000-0000)/",
+                            "DepartureTime": "/Date(1573340820000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Straßburger Platz",
+                            "Type": "Stop",
+                            "DataId": "33000007",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658200,
+                            "Longitude": 4623146,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573340880000-0000)/",
+                            "DepartureTime": "/Date(1573340880000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "St.-Benno-Gymnasium",
+                            "Type": "Stop",
+                            "DataId": "33000080",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658680,
+                            "Longitude": 4623321,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573340940000-0000)/",
+                            "DepartureTime": "/Date(1573340940000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Dürerstraße",
+                            "Type": "Stop",
+                            "DataId": "33000009",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658896,
+                            "Longitude": 4623366,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341060000-0000)/",
+                            "DepartureTime": "/Date(1573341060000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Sachsenallee",
+                            "Type": "Stop",
+                            "DataId": "33000010",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5659208,
+                            "Longitude": 4623307,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341120000-0000)/",
+                            "DepartureTime": "/Date(1573341120000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Rosa-Luxemburg-Platz",
+                            "Type": "Stop",
+                            "DataId": "33000011",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5659716,
+                            "Longitude": 4622992,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341240000-0000)/",
+                            "DepartureTime": "/Date(1573341240000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Bautzner Straße / Rothenburger Straße",
+                            "Type": "Stop",
+                            "DataId": "33000012",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660085,
+                            "Longitude": 4622915,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341300000-0000)/",
+                            "DepartureTime": "/Date(1573341300000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Görlitzer Straße",
+                            "Type": "Stop",
+                            "DataId": "33000264",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660457,
+                            "Longitude": 4623029,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341420000-0000)/",
+                            "DepartureTime": "/Date(1573341420000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Alaunplatz",
+                            "Type": "Stop",
+                            "DataId": "33000263",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660891,
+                            "Longitude": 4623146,
+                            "MapPdfId": "VVO_5DC728E4D",
+                            "CancelReasons": []
+                        }
+                    ]
+                }
+            ],
+            "MapData": [
+                "Bus|5656311|4622063|5656309|4622076|5656294|4622296|5656286|4622380|5656255|4622579|5656248|4622600|5656248|4622600|5656195|4622797|5656090|4623104|5656079|4623140|5656063|4623187|5656057|4623206|5656051|4623258|5656055|4623278|5656068|4623307|5656068|4623307|5656074|4623320|5656114|4623361|5656145|4623393|5656227|4623507|5656253|4623502|5656267|4623507|5656267|4623507|5656268|4623507|5656280|4623512|5656295|4623520|5656451|4623590|5656452|4623611|5656469|4623621|5656493|4623609|5656522|4623624|5656557|4623640|5656573|4623646|5656582|4623651|",
+                "Tram|5656584|4623652|5656644|4623680|5656653|4623684|5656678|4623698|5656713|4623716|5656749|4623734|5656753|4623737|5656758|4623738|5656762|4623739|5656765|4623739|5656769|4623738|5656773|4623737|5656777|4623734|5656779|4623732|5656781|4623728|5656910|4623514|5656943|4623458|5656945|4623457|5656946|4623453|5656963|4623427|5656963|4623427|5656954|4623439|5656954|4623439|5656981|4623396|5657019|4623331|5657024|4623323|5657094|4623206|5657123|4623157|5657132|4623145|5657204|4623019|5657211|4623008|5657212|4623006|5657212|4623006|5657230|4622978|5657254|4622923|5657263|4622866|5657271|4622761|5657273|4622742|5657345|4622638|5657345|4622638|5657360|4622618|5657366|4622609|5657381|4622628|5657401|4622646|5657411|4622658|5657422|4622669|5657431|4622678|5657454|4622694|5657474|4622707|5657494|4622718|5657528|4622738|5657653|4622815|5657829|4622921|5657860|4622939|5657860|4622939|5657907|4622967|5657957|4622998|5657985|4623016|5658019|4623035|5658124|4623099|5658174|4623130|5658193|4623141|5658212|4623151|5658212|4623151|5658215|4623153|5658230|4623159|5658257|4623173|5658371|4623221|5658648|4623316|5658677|4623321|5658677|4623321|5658841|4623353|5658896|4623365|5658896|4623365|5658932|4623372|5659017|4623390|5659048|4623393|5659081|4623386|5659102|4623377|5659128|4623362|5659205|4623306|5659205|4623306|5659252|4623274|5659291|4623247|5659330|4623217|5659420|4623151|5659477|4623110|5659611|4623015|5659627|4623008|5659675|4623001|5659716|4622993|5659716|4622993|5659834|4622968|5659946|4622945|5660085|4622913|5660085|4622913|5660088|4622913|5660111|4622907|5660132|4622909|5660157|4622918|5660333|4622990|5660456|4623032|5660456|4623032|5660480|4623040|5660493|4623041|5660513|4623046|5660615|4623086|5660705|4623122|5660775|4623150|5660853|4623183|5660867|4623184|5660872|4623181|5660880|4623177|5660893|4623148|"
+            ]
+        },
+        {
+            "PriceLevel": 1,
+            "Price": "2,40",
+            "Duration": 32,
+            "Interchanges": 1,
+            "MotChain": [
+                {
+                    "Type": "Bus",
+                    "Name": "61",
+                    "Direction": " Bühlau",
+                    "Changes": [
+                        "6350"
+                    ],
+                    "Diva": {
+                        "Number": "21061",
+                        "Network": "voe"
+                    }
+                },
+                {
+                    "Type": "Tram",
+                    "Name": "13",
+                    "Direction": " Kaditz",
+                    "Changes": [],
+                    "Diva": {
+                        "Number": "11013",
+                        "Network": "voe"
+                    }
+                }
+            ],
+            "FareZoneOrigin": 10,
+            "FareZoneDestination": 10,
+            "MapPdfId": "VVO_5DC728E4E",
+            "RouteId": 4,
+            "PartialRoutes": [
+                {
+                    "PartialRouteId": 0,
+                    "Duration": 6,
+                    "Mot": {
+                        "Type": "Bus",
+                        "Name": "61",
+                        "Direction": " Bühlau",
+                        "Changes": [
+                            "6350"
+                        ],
+                        "Diva": {
+                            "Number": "21061",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 0,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573341300000-0000)/",
+                            "DepartureTime": "/Date(1573341300000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Staats- und Universitätsbibliothek",
+                            "Type": "Stop",
+                            "DataId": "33000728",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656310,
+                            "Longitude": 4622063,
+                            "MapPdfId": "VVO_5DC728E4F",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341360000-0000)/",
+                            "DepartureTime": "/Date(1573341360000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Zellescher Weg",
+                            "Type": "Stop",
+                            "DataId": "33000312",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656248,
+                            "Longitude": 4622601,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341480000-0000)/",
+                            "DepartureTime": "/Date(1573341480000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Caspar-David-Friedrich-Straße",
+                            "Type": "Stop",
+                            "DataId": "33000784",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656068,
+                            "Longitude": 4623307,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341540000-0000)/",
+                            "DepartureTime": "/Date(1573341540000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Wasaplatz",
+                            "Type": "Stop",
+                            "DataId": "33000115",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656267,
+                            "Longitude": 4623509,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573341660000-0000)/",
+                            "DepartureTime": "/Date(1573341660000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "S-Bf. Strehlen",
+                            "Type": "Stop",
+                            "DataId": "33000757",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656583,
+                            "Longitude": 4623652,
+                            "MapPdfId": "VVO_5DC728E410",
+                            "CancelReasons": []
+                        }
+                    ]
+                },
+                {
+                    "PartialRouteId": 1,
+                    "Duration": 21,
+                    "Mot": {
+                        "Type": "Tram",
+                        "Name": "13",
+                        "Direction": " Kaditz",
+                        "Changes": [],
+                        "Diva": {
+                            "Number": "11013",
+                            "Network": "voe"
+                        }
+                    },
+                    "MapDataIndex": 1,
+                    "Shift": "None",
+                    "RegularStops": [
+                        {
+                            "ArrivalTime": "/Date(1573341960000-0000)/",
+                            "DepartureTime": "/Date(1573341960000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "S-Bf. Strehlen",
+                            "Type": "Stop",
+                            "DataId": "33000757",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656583,
+                            "Longitude": 4623652,
+                            "MapPdfId": "VVO_5DC728E410",
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342020000-0000)/",
+                            "DepartureTime": "/Date(1573342020000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Querallee",
+                            "Type": "Stop",
+                            "DataId": "33000113",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5656963,
+                            "Longitude": 4623427,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342080000-0000)/",
+                            "DepartureTime": "/Date(1573342080000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Zoo",
+                            "Type": "Stop",
+                            "DataId": "33000112",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657212,
+                            "Longitude": 4623006,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342140000-0000)/",
+                            "DepartureTime": "/Date(1573342200000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Lennéplatz",
+                            "Type": "Stop",
+                            "DataId": "33000111",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657342,
+                            "Longitude": 4622645,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342260000-0000)/",
+                            "DepartureTime": "/Date(1573342260000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Georg-Arnhold-Bad",
+                            "Type": "Stop",
+                            "DataId": "33000008",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5657862,
+                            "Longitude": 4622939,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342380000-0000)/",
+                            "DepartureTime": "/Date(1573342620000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Straßburger Platz",
+                            "Type": "Stop",
+                            "DataId": "33000007",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658200,
+                            "Longitude": 4623146,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342680000-0000)/",
+                            "DepartureTime": "/Date(1573342680000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "St.-Benno-Gymnasium",
+                            "Type": "Stop",
+                            "DataId": "33000080",
+                            "Platform": {
+                                "Name": "4",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658680,
+                            "Longitude": 4623321,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342740000-0000)/",
+                            "DepartureTime": "/Date(1573342740000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Dürerstraße",
+                            "Type": "Stop",
+                            "DataId": "33000009",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5658896,
+                            "Longitude": 4623366,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342860000-0000)/",
+                            "DepartureTime": "/Date(1573342860000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Sachsenallee",
+                            "Type": "Stop",
+                            "DataId": "33000010",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5659208,
+                            "Longitude": 4623307,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573342920000-0000)/",
+                            "DepartureTime": "/Date(1573342920000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Rosa-Luxemburg-Platz",
+                            "Type": "Stop",
+                            "DataId": "33000011",
+                            "Platform": {
+                                "Name": "1",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5659716,
+                            "Longitude": 4622992,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573343040000-0000)/",
+                            "DepartureTime": "/Date(1573343040000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Bautzner Straße / Rothenburger Straße",
+                            "Type": "Stop",
+                            "DataId": "33000012",
+                            "Platform": {
+                                "Name": "3",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660085,
+                            "Longitude": 4622915,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573343100000-0000)/",
+                            "DepartureTime": "/Date(1573343100000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Görlitzer Straße",
+                            "Type": "Stop",
+                            "DataId": "33000264",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660457,
+                            "Longitude": 4623029,
+                            "CancelReasons": []
+                        },
+                        {
+                            "ArrivalTime": "/Date(1573343220000-0000)/",
+                            "DepartureTime": "/Date(1573343220000-0000)/",
+                            "Place": "Dresden",
+                            "Name": "Alaunplatz",
+                            "Type": "Stop",
+                            "DataId": "33000263",
+                            "Platform": {
+                                "Name": "2",
+                                "Type": "Platform"
+                            },
+                            "Latitude": 5660891,
+                            "Longitude": 4623146,
+                            "MapPdfId": "VVO_5DC728E411",
+                            "CancelReasons": []
+                        }
+                    ]
+                }
+            ],
+            "MapData": [
+                "Bus|5656311|4622063|5656309|4622076|5656294|4622296|5656286|4622380|5656255|4622579|5656248|4622600|5656248|4622600|5656195|4622797|5656090|4623104|5656079|4623140|5656063|4623187|5656057|4623206|5656051|4623258|5656055|4623278|5656068|4623307|5656068|4623307|5656074|4623320|5656114|4623361|5656145|4623393|5656227|4623507|5656253|4623502|5656267|4623507|5656267|4623507|5656268|4623507|5656280|4623512|5656295|4623520|5656451|4623590|5656452|4623611|5656469|4623621|5656493|4623609|5656522|4623624|5656557|4623640|5656573|4623646|5656582|4623651|",
+                "Tram|5656584|4623652|5656644|4623680|5656653|4623684|5656678|4623698|5656713|4623716|5656749|4623734|5656753|4623737|5656758|4623738|5656762|4623739|5656765|4623739|5656769|4623738|5656773|4623737|5656777|4623734|5656779|4623732|5656781|4623728|5656910|4623514|5656943|4623458|5656945|4623457|5656946|4623453|5656963|4623427|5656963|4623427|5656954|4623439|5656954|4623439|5656981|4623396|5657019|4623331|5657024|4623323|5657094|4623206|5657123|4623157|5657132|4623145|5657204|4623019|5657211|4623008|5657212|4623006|5657212|4623006|5657230|4622978|5657254|4622923|5657263|4622866|5657271|4622761|5657273|4622742|5657345|4622638|5657345|4622638|5657360|4622618|5657366|4622609|5657381|4622628|5657401|4622646|5657411|4622658|5657422|4622669|5657431|4622678|5657454|4622694|5657474|4622707|5657494|4622718|5657528|4622738|5657653|4622815|5657829|4622921|5657860|4622939|5657860|4622939|5657907|4622967|5657957|4622998|5657985|4623016|5658019|4623035|5658124|4623099|5658174|4623130|5658193|4623141|5658212|4623151|5658212|4623151|5658215|4623153|5658230|4623159|5658257|4623173|5658371|4623221|5658648|4623316|5658677|4623321|5658677|4623321|5658841|4623353|5658896|4623365|5658896|4623365|5658932|4623372|5659017|4623390|5659048|4623393|5659081|4623386|5659102|4623377|5659128|4623362|5659205|4623306|5659205|4623306|5659252|4623274|5659291|4623247|5659330|4623217|5659420|4623151|5659477|4623110|5659611|4623015|5659627|4623008|5659675|4623001|5659716|4622993|5659716|4622993|5659834|4622968|5659946|4622945|5660085|4622913|5660085|4622913|5660088|4622913|5660111|4622907|5660132|4622909|5660157|4622918|5660333|4622990|5660456|4623032|5660456|4623032|5660480|4623040|5660493|4623041|5660513|4623046|5660615|4623086|5660705|4623122|5660775|4623150|5660853|4623183|5660867|4623184|5660872|4623181|5660880|4623177|5660893|4623148|"
+            ]
+        }
+    ]
+}
