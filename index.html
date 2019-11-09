@@ -40,154 +40,204 @@
       color: #777;
     }
 
-    .legend {
-      text-align: left;
-      line-height: 18px;
-      color: #555;
+    .mapOverlayContainer {
+      position: relative;
     }
 
-    .legend i {
-      width: 18px;
-      height: 18px;
-      float: left;
-      margin-right: 8px;
-      opacity: 0.7;
+    .mapOverlay {
+      overflow: hidden;
+      background-color: #ffffff;
+      border-radius: 1em;
+      padding: 1em;
+      margin: 1em;
+
+      position: absolute;
+      z-index: 1000;
+      right: 0;
     }
-  </style>
-  <style>
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div class='col-sm-12' id="KarteMitPunkt" />
+  <div class="mapOverlayContainer">
+    <div class="container">
+      <div class="row">
+        <div class="mapOverlay">
+          <div class="row">
+            <div class='col-sm-6'>
+              <div class="row">
+                <div class='col-sm-12'>
+                  früheste Abfahrtzeit
+                </div>
+                <div class='col-sm-12'>
+                  <div class="form-group">
+                    <div class='input-group date' id='startdatumsauswahl'>
+                      <input type='text' class="form-control" style="z-index: inherit 9;" />
+                      <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class='col-sm-12'>
+                    späteste Ankunftszeit
+                  </div>
+                  <div class='col-sm-12'>
+                    <div class="form-group">
+                      <div class='input-group date' id='enddatumsauswahl'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='col-sm-6'>
+              <div class="row">
+                  <div class='col-sm-12'>
+                      Startort
+                    </div>
+                  <div class="form-group">
+                  <div class='input-group location'>
+                    <input id='startauswahl' type='text' class="form-control" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class='col-sm-12'>
+                      Zielort
+                    </div>
+                  <div class="form-group">
+                  <div class='input-group location'>
+                    <input id='endauswahl' type='text' class="form-control" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <form>
+            <p>Wie viel Zeit hast du?</p>
+            <fieldset>
+              <input type="radio" id="option1" name="Zahlmethode" value="1">
+              <label for="mc">Viel</label>
+              <input type="radio" id="option2" name="Zahlmethode" value="2">
+              <label for="vi">Wenig</label>
+              <input type="radio" id="option3" name="Zahlmethode" value="3">
+              <label for="ae">Gar nicht</label>
+            </fieldset>
+          </form>
+
+        </div>
+        <div class='col-sm-12' id="KarteMitPunkt" />
+      </div>
     </div>
-  </div>
-  <script>
-    // Karte mit Mittelpunkt Dresden erzeugen
-    var laengenGrad = 13.7381437;
-    var breitenGrad = 51.0493286;
-    var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
-    var zoomStufe = 14;
-    var minDate = moment();
-    var maxDate = moment();
-    maxDate.add('1', 'hour');
+    <script>
+      // Karte mit Mittelpunkt Dresden erzeugen
+      var laengenGrad = 13.7381437;
+      var breitenGrad = 51.0493286;
+      var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
+      var zoomStufe = 14;
+      var minDate = moment();
+      var maxDate = moment();
+      maxDate.add('1', 'hour');
 
-    var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
-    // Hintergrundkarte setzen
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(karte);
+      var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
+      // Hintergrundkarte setzen
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(karte);
 
-    var geoJsonDaten = {
-      "type": "FeatureCollection",
-      "features": [
-      ]
-    };
+      var geoJsonDaten = {
+        "type": "FeatureCollection",
+        "features": [
+        ]
+      };
 
-    var optionen = {
-      filter: function (feature, layer) {
-        return moment(feature.properties.coordTimes).isBetween(minDate, maxDate);
+      var optionen = {
+        filter: function (feature, layer) {
+          return moment(feature.properties.coordTimes).isBetween(minDate, maxDate);
+        }
       }
-    }
-    // Punkt-Marker setzen
-    var geojsonEbene = L.geoJson(geoJsonDaten, optionen);
-    var schichtenGruppe = L.layerGroup([]);
-    schichtenGruppe.addLayer(geojsonEbene);
-    schichtenGruppe.addTo(karte);
-
-    var hoverZuMarkerAbstand = function (aktuelleZoomStufe) {
-      return 0.39 / Math.pow(2, aktuelleZoomStufe - 6);
-    };
-    var geojsonEbenenHover;
-    geojsonEbene.on('mouseover', function (ereignis) {
-      var koordinaten = ereignis.layer.feature.geometry.coordinates;
-      var hoverKoordinaten = [koordinaten[1] + hoverZuMarkerAbstand(karte.getZoom()), koordinaten[0]];
-      if (karte) {
-        var eigenschaften = ereignis.layer.feature.properties
-        geojsonEbenenHover = L.popup()
-          .setLatLng(hoverKoordinaten)
-          .setContent(eigenschaften.name2)
-          .openOn(karte);
-      }
-    });
-    geojsonEbene.on('mouseout', function (ereignis) {
-      if (geojsonEbenenHover && karte) {
-        karte.closePopup(geojsonEbenenHover);
-        geojsonEbenenHover = null;
-      }
-    });
-
-    var schichtNeuLaden = function () {
-      schichtenGruppe.clearLayers();
-      karte.removeLayer(schichtenGruppe);
+      // Punkt-Marker setzen
       var geojsonEbene = L.geoJson(geoJsonDaten, optionen);
+      var schichtenGruppe = L.layerGroup([]);
       schichtenGruppe.addLayer(geojsonEbene);
       schichtenGruppe.addTo(karte);
-    };
 
-    var info = L.control();
-
-    info.onAdd = function (map) {
-      this._div = L.DomUtil.create('div', 'info');
-      this.update();
-      return this._div;
-    };
-
-    info.update = function (id, props) {
-      var ref = this;
-      $.ajax({
-        url: "https://geo3eck.github.io/dresden-rallye-web/html/forms.html", success: function (htmlInner) {
-          ref._div.innerHTML = htmlInner;
-        }, error: function (err) {
-          ref._div.innerHTML = 'Could not load form'
+      var hoverZuMarkerAbstand = function (aktuelleZoomStufe) {
+        return 0.39 / Math.pow(2, aktuelleZoomStufe - 6);
+      };
+      var geojsonEbenenHover;
+      geojsonEbene.on('mouseover', function (ereignis) {
+        var koordinaten = ereignis.layer.feature.geometry.coordinates;
+        var hoverKoordinaten = [koordinaten[1] + hoverZuMarkerAbstand(karte.getZoom()), koordinaten[0]];
+        if (karte) {
+          var eigenschaften = ereignis.layer.feature.properties
+          geojsonEbenenHover = L.popup()
+            .setLatLng(hoverKoordinaten)
+            .setContent(eigenschaften.name2)
+            .openOn(karte);
         }
       });
-    };
-
-    info.addTo(karte);
-
-    function availableStations() {
-      $.post("https://webapi.vvo-online.de/tr/pointfinder", {
-        "query": "Albert",
-        "limit": 10,
-        "stopOnly": false
-      }, function (data) {
-        if (data.Status.Code == 'Ok') {
-          var points = data.Points;
-          var names = points.map(point => point.split('|')[3])
-          return names;
-        } else {
-          return "Fehler in der API";
+      geojsonEbene.on('mouseout', function (ereignis) {
+        if (geojsonEbenenHover && karte) {
+          karte.closePopup(geojsonEbenenHover);
+          geojsonEbenenHover = null;
         }
       });
-    }
 
-    $(function () {
-      $('#startauswahl').autocomplete({
-        source: availableStations(),
-        minLength: 3
+      var schichtNeuLaden = function () {
+        schichtenGruppe.clearLayers();
+        karte.removeLayer(schichtenGruppe);
+        var geojsonEbene = L.geoJson(geoJsonDaten, optionen);
+        schichtenGruppe.addLayer(geojsonEbene);
+        schichtenGruppe.addTo(karte);
+      };
+
+      function availableStations() {
+        $.post("https://webapi.vvo-online.de/tr/pointfinder", {
+          "query": "Albert",
+          "limit": 10,
+          "stopOnly": false
+        }, function (data) {
+          if (data.Status.Code == 'Ok') {
+            var points = data.Points;
+            var names = points.map(point => point.split('|')[3])
+            return names;
+          } else {
+            return "Fehler in der API";
+          }
+        });
+      }
+
+      $(function () {
+        $('#startauswahl').autocomplete({
+          source: availableStations(),
+          minLength: 3
+        });
+        $('#startdatumsauswahl').datetimepicker({
+          defaultDate: minDate,
+        });
+        $('#enddatumsauswahl').datetimepicker({
+          defaultDate: maxDate,
+          useCurrent: false
+        });
+        $("#startdatumsauswahl").on("dp.change", function (e) {
+          minDate = moment(e.date)
+          $('#enddatumsauswahl').data("DateTimePicker").minDate(e.date);
+          schichtNeuLaden();
+        });
+        $("#enddatumsauswahl").on("dp.change", function (e) {
+          maxDate = moment(e.date)
+          $('#startdatumsauswahl').data("DateTimePicker").maxDate(e.date);
+          schichtNeuLaden();
+        });
       });
-      $('#startdatumsauswahl').datetimepicker({
-        defaultDate: minDate,
-      });
-      $('#enddatumsauswahl').datetimepicker({
-        defaultDate: maxDate,
-        useCurrent: false
-      });
-      $("#startdatumsauswahl").on("dp.change", function (e) {
-        minDate = moment(e.date)
-        $('#enddatumsauswahl').data("DateTimePicker").minDate(e.date);
-        schichtNeuLaden();
-      });
-      $("#enddatumsauswahl").on("dp.change", function (e) {
-        maxDate = moment(e.date)
-        $('#startdatumsauswahl').data("DateTimePicker").maxDate(e.date);
-        schichtNeuLaden();
-      });
-    });
-  </script>
+    </script>
 </body>
 
 </html>
