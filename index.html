@@ -11,10 +11,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
     integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
     crossorigin=""></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script
@@ -35,7 +38,7 @@
       <div class='col-sm-4'>
         <div class="form-group">
           <div class='input-group date' id='startdatumsauswahl'>
-            <input type='text' class="form-control" />
+            <input type='text' class="form-control"  style="z-index: inherit 9;"/>
             <span class="input-group-addon">
               <span class="glyphicon glyphicon-calendar"></span>
             </span>
@@ -59,15 +62,15 @@
     <div class="row">
       <div class='col-sm-6'>
         <div class="form-group">
-          <div class='input-group location' id='startauswahl'>
-            <input type='text' class="form-control" />
+          <div class='input-group location'>
+            <input id='startauswahl' type='text' class="form-control" />
           </div>
         </div>
       </div>
       <div class='col-sm-6'>
         <div class="form-group">
-          <div class='input-group location' id='endauswahl'>
-            <input type='text' class="form-control" />
+          <div class='input-group location'>
+            <input id='endauswahl' type='text' class="form-control" />
           </div>
         </div>
       </div>
@@ -139,7 +142,18 @@
       schichtenGruppe.addTo(karte);
     };
 
+    const availableStations = function () {
+      return [
+        "Haltestelle 1",
+        "Haltestelle 2"
+      ]
+    }
+
     $(function () {
+      $('#startauswahl').autocomplete({
+        source: availableStations(),
+        minLength: 3
+     });
       $('#startdatumsauswahl').datetimepicker({
         defaultDate: minDate,
       });
