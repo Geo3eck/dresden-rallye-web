@@ -127,13 +127,6 @@
       schichtenGruppe.addTo(karte);
     };
 
-    const availableStations = function () {
-      return [
-        "Haltestelle 1",
-        "Haltestelle 2"
-      ]
-    }
-
     var info = L.control();
 
     info.onAdd = function (map) {
@@ -155,9 +148,21 @@
 
     info.addTo(karte);
 
-    $.post("ajax/test.html", function (data) {
-      $(".result").html(data);
-    });
+    function availableStations() {
+      $.post("https://webapi.vvo-online.de/tr/pointfinder", {
+        "query": "Albert",
+        "limit": 10,
+        "stopOnly": false
+      }, function (data) {
+        if (data.Status.Code == 'Ok') {
+          var points = data.Points;
+          var names = points.map(point => point.split('|')[3])
+          return names;
+        } else {
+          return "Fehler in der API";
+        }
+      });
+    }
 
     $(function () {
       $('#startauswahl').autocomplete({
@@ -168,13 +173,6 @@
         defaultDate: minDate,
       });
       $('#enddatumsauswahl').datetimepicker({
-        defaultDate: maxDate,
-        useCurrent: false
-      });
-      $('#start').datetimepicker({
-        defaultDate: minDate,
-      });
-      $('#end').datetimepicker({
         defaultDate: maxDate,
         useCurrent: false
       });
