@@ -26,6 +26,22 @@
     #KarteMitPunkt {
       height: 480px;
     }
+
+    .mapOverlayContainer {
+      position: relative;
+    }
+
+    .mapOverlay {
+      overflow: hidden;
+      background-color: #ffffff;
+      border-radius: 1em;
+      padding: 1em;
+      margin: 1em;
+
+      position: absolute;
+      z-index: 1000;
+      right: 0; 
+    }
   </style>
 </head>
 
@@ -76,6 +92,22 @@
       </div>
     </div>
     <div class="row">
+      <div class="mapOverlayContainer">
+      <div class="mapOverlay">
+        <form>
+            <p>Wie viel Zeit hast du?</p>
+            <fieldset>
+                <input type="radio" id="option1" name="Zahlmethode" value="1">
+                <label for="mc">Viel</label> 
+                <input type="radio" id="option2" name="Zahlmethode" value="2">
+                <label for="vi">Wenig</label>
+                <input type="radio" id="option3" name="Zahlmethode" value="3">
+                <label for="ae">Gar nicht</label> 
+              </fieldset>
+        </form>
+
+      </div>
+    </div>
       <div class='col-sm-12' id="KarteMitPunkt" />
     </div>
   </div>
