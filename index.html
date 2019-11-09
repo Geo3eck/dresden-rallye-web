@@ -59,78 +59,77 @@
 </head>
 
 <body>
-  <div class="mapOverlayContainer">
     <div class="container">
-      <div class="row">
-        <div class="mapOverlay">
-          <div class="row">
-            <div class='col-sm-6'>
-              <div class="row">
-                <div class='col-sm-12'>
-                  früheste Abfahrtzeit
+        <div class="row">
+          <div class="mapOverlayContainer">
+          <div class="mapOverlay">
+            <div class="row">
+              <div class="col-sm-6">
+                früheste Abfahrtzeit
+              </div>
+              <div class="col-sm-6">
+                Startort
+              </div>
+              <div class="w-100"></div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <div class='input-group date' id='startdatumsauswahl'>
+                    <input type='text' class="form-control" style="z-index: inherit 9;" />
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
                 </div>
-                <div class='col-sm-12'>
+              </div>
+              <div class="col-sm-6">
                   <div class="form-group">
-                    <div class='input-group date' id='startdatumsauswahl'>
-                      <input type='text' class="form-control" style="z-index: inherit 9;" />
+                      <div class='input-group location'>
+                        <input id='startauswahl' type='text' class="form-control" />
+                      </div>
+                  </div>
+              </div>
+              <div class="w-100"></div>
+              <div class="col-sm-6">
+                späteste Ankunftszeit
+              </div>
+              <div class="col-sm-6">
+                Zielort
+              </div>
+              <div class="w-100"></div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class='input-group date' id='enddatumsauswahl'>
+                      <input type='text' class="form-control" />
                       <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                       </span>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class='col-sm-12'>
-                    späteste Ankunftszeit
-                  </div>
-                  <div class='col-sm-12'>
-                    <div class="form-group">
-                      <div class='input-group date' id='enddatumsauswahl'>
-                        <input type='text' class="form-control" />
-                        <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
-                      </div>
+              </div>
+              <div class="col-sm-6">
+                  <div class="form-group">
+                    <div class='input-group location'>
+                      <input id='endauswahl' type='text' class="form-control" />
                     </div>
                   </div>
-                </div>
               </div>
             </div>
-            <div class='col-sm-6'>
-              <div class="row">
-                  <div class='col-sm-12'>
-                      Startort
-                    </div>
-                  <div class="form-group">
-                  <div class='input-group location'>
-                    <input id='startauswahl' type='text' class="form-control" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                  <div class='col-sm-12'>
-                      Zielort
-                    </div>
-                  <div class="form-group">
-                  <div class='input-group location'>
-                    <input id='endauswahl' type='text' class="form-control" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <form>
-            <p>Wie viel Zeit hast du?</p>
-            <fieldset>
-              <input type="radio" id="option1" name="Zahlmethode" value="1">
-              <label for="mc">Viel</label>
-              <input type="radio" id="option2" name="Zahlmethode" value="2">
-              <label for="vi">Wenig</label>
-              <input type="radio" id="option3" name="Zahlmethode" value="3">
-              <label for="ae">Gar nicht</label>
-            </fieldset>
-          </form>
 
+            <div class="row">
+              <div class="col-sm-6">
+                <form>
+                  <p>Wie viel Zeit hast du?</p>
+                  <fieldset>
+                    <input type="radio" id="option1" name="Zahlmethode" value="1">
+                    <label for="mc">Viel</label>
+                    <input type="radio" id="option2" name="Zahlmethode" value="2">
+                    <label for="vi">Wenig</label>
+                    <input type="radio" id="option3" name="Zahlmethode" value="3">
+                    <label for="ae">Gar nicht</label>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
         </div>
         <div class='col-sm-12' id="KarteMitPunkt" />
       </div>
