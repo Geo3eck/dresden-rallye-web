@@ -310,6 +310,90 @@
         $('.dropDown').slideToggle(300);
       });
 
+      {
+        $.getJSON("data/DVB-bus.geojson", function (data) {
+          var geojsonEbene = L.geoJson(data);
+          karte.addLayer(geojsonEbene);
+        });
+      }
+      var redIcon = new L.Icon({
+        // Quelle der Icons: https://github.com/pointhi/leaflet-color-markers
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [0, 0],
+        shadowSize: [41, 41]
+      });
+      {
+        var teilAutoIcon = new L.Icon({
+          iconUrl: 'data/icons/teil_auto_logo_400x400.jpg',
+          iconSize: [30, 30],
+          iconAnchor: [12, 41],
+          popupAnchor: [0, 0],
+          shadowSize: [30, 30]
+        });
+          $.getJSON("data/Carsharing_Station.geojson", function (data) {
+          var geojsonEbene = L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+              return L.marker(latlng, { icon: teilAutoIcon });
+            }
+          });
+          karte.addLayer(geojsonEbene);
+        });
+      }
+      {
+        var teilAutoIcon = new L.Icon({
+          iconUrl: 'data/icons/120px-BUS-Logo-BVG.svg.png',
+          iconSize: [12, 12],
+          iconAnchor: [12, 12],
+          popupAnchor: [0, 0],
+          shadowSize: [12, 12]
+        });
+          $.getJSON("data/DVB-bus.geojson", function (data) {
+          var geojsonEbene = L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+              return L.marker(latlng, { icon: teilAutoIcon });
+            }
+          });
+          karte.addLayer(geojsonEbene);
+        });
+      }
+      {
+        var tramIcon = new L.Icon({
+          iconUrl: 'data/icons/Tram-Logo.svg.png',
+          iconSize: [12, 12],
+          iconAnchor: [12, 41],
+          popupAnchor: [0, 0],
+          shadowSize: [12, 12]
+        });
+          $.getJSON("data/DVB-tram_stops.geojson", function (data) {
+          var geojsonEbene = L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+              return L.marker(latlng, { icon: tramIcon });
+            }
+          });
+          karte.addLayer(geojsonEbene);
+        });
+      }
+      {
+        var busIcon = new L.Icon({
+          iconUrl: 'data/icons/News_332px_249px_MOBI.png',
+          iconSize: [30, 30],
+          iconAnchor: [12, 41],
+          popupAnchor: [0, 0],
+          shadowSize: [30, 30]
+        });
+          $.getJSON("data/Mobipunkte-aktiv.geojson", function (data) {
+          var geojsonEbene = L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+              return L.marker(latlng, { icon: busIcon });
+            }
+          });
+          karte.addLayer(geojsonEbene);
+        });
+      }
+
     </script>
 </body>
 
