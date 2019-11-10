@@ -153,6 +153,8 @@
                     <div>Perspektivisch soll es möglich sein die Route auf der Karte via Drag & Drop anzupassen.</div>
                     <div>Profil</div>
                     <div>Der Punktestand soll gecached und gespeichert werden. Ein Konzept für die Erfüllung der Aufgabe muss noch entwickelt werden. </div>
+                    <div>Performance-Optimierung</div>
+                    <div>Animationen und Daten führen zu nicht-flüssigen Interface. Das muss überarbeitet werden.</div>
                 </div>
 
             </div>
@@ -324,11 +326,9 @@
         $('.dropDown').slideToggle(300);
       });
       $('#challenge').click(function () {
-          $('#aufgabe').delay(300).show({
-              duration:300
-          });
         makeVisible()
         $('.dropDown').slideToggle(300);
+          $('#aufgabe').slideToggle(50);
           
         update();
       });
