@@ -34,7 +34,8 @@
             <div class="row" style="background-color:#eeeeee;            border-bottom: 2px solid #393e41; line-height: 1;padding:10px 5px 5px 5px;">
                 <img src="data/icons/logo.png" class="logo" align="left" />
                 <div class="infoText">
-                    Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular ausfüllen und wir fordern dich heraus! Finde eine Route, die die Kriterien erfüllt und entdecke dabei vielleicht sogar neue Orte. 
+                    <p>Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular ausfüllen und wir fordern dich heraus! Finde eine Route, die die Kriterien erfüllt und entdecke dabei vielleicht sogar neue Orte. </p>
+                    <p id="aufgabe">Deine heutige Challenge: <b>Versuche dein Ziel in maximal 15 Minuten zu erreichen (100 Punkte)</b>.</p>
                 </div>
             </div>
 
@@ -108,9 +109,8 @@
                         </div>
                         <div style="vertical-align:bottom;text-align: right;"><button id="challenge" class="btn">Challenge me!</button>
                         </div>
-                        <div>
+                        <div id="challenge-box">
                             <p><small>Klicke auf den <b>"Challenge me!"-</b>Button, um deine heutige Aufgabe gemäß deinen Angaben zu bekommen.</small></p>
-                            <p id="aufgabe">Deine heutige Challenge: <b>Versuche dein Ziel in maximal 15 Minuten zu erreichen (100 Punkte)</b>.</p>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
             <div class="row">
                 <div class='col-sm-12' id="KarteMitPunkt" />
             </div>
-            <div id="dialog" title="Datenquellen">
+            <div id="dialog-sources" title="Datenquellen">
                 
                 <div class="sources">
                 <div><b>Quellen</b></div>
@@ -140,7 +140,22 @@
                     <div>Flag-Icon</div>
                 </div>
 
-        </div>
+            </div>
+            
+            <div id="dialog-todo" title="Was noch zu tun ist">
+                
+                <div class="sources">
+                <div><b>Aufgabe</b></div>
+                    <div><b>Beschreibung</b></div>
+                <div>Challenge-Integration</div>
+                    <div>Ein Zufallsgenerator für die verschiedenen Challenges gemäß den Angaben muss noch entwickelt werden.</div>
+                    <div>Routen-Editor</div>
+                    <div>Perspektivisch soll es möglich sein die Route auf der Karte via Drag & Drop anzupassen.</div>
+                    <div>Profil</div>
+                    <div>Der Punktestand soll gecached und gespeichert werden. Ein Konzept für die Erfüllung der Aufgabe muss noch entwickelt werden. </div>
+                </div>
+
+            </div>
         </div>
     <script>
       var visible = false;
@@ -156,7 +171,7 @@
       var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
       // Hintergrundkarte setzen
       L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-                attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a> | <a href="#" id="opener"> Datenquellen</a>'
+                attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a> | <a href="#" id="opener-sources"> Datenquellen</a> | <a href="#" id="opener-todo"> TODO</a>'
             }).addTo(karte);
 
             var optionen = {
@@ -309,18 +324,29 @@
         $('.dropDown').slideToggle(300);
       });
       $('#challenge').click(function () {
+          $('#aufgabe').delay(300).show({
+              duration:300
+          });
         makeVisible()
         $('.dropDown').slideToggle(300);
+          
         update();
       });
     
         $(function() {
-            $( "#dialog" ).dialog({
+            $( "#dialog-sources" ).dialog({
                autoOpen: false,  
                 width: 500
             });
-            $( "#opener" ).click(function() {
-               $( "#dialog" ).dialog( "open" );
+            $( "#opener-sources" ).click(function() {
+               $( "#dialog-sources" ).dialog( "open" );
+            });
+            $( "#dialog-todo" ).dialog({
+               autoOpen: false,  
+                width: 700
+            });
+            $( "#opener-todo" ).click(function() {
+               $( "#dialog-todo" ).dialog( "open" );
             });
          });
 

@@ -86,7 +86,7 @@ body {
 
 .sources {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 2fr;
     width: 90%;
     margin: 0 auto;
     grid-gap: 20px;
@@ -97,7 +97,7 @@ body {
 }
 
 
-#challenge {
+#challenge-box {
     grid-row: 3 / 4;
     grid-column: 1 / 5;
     text-align: center;
@@ -106,6 +106,8 @@ body {
 #aufgabe {
     padding: 5px;
     background-color: #fdc300;
+    text-align: center;
+    display:none;
 }
 
 .logo {
