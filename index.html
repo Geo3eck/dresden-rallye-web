@@ -322,7 +322,7 @@
       });
       {
         var teilAutoIcon = new L.Icon({
-          iconUrl: 'data/icons/teil_auto_logo_400x400.png',
+          iconUrl: 'data/icons/teilauto.png',
           iconSize: [30, 30],
           iconAnchor: [12, 41],
           popupAnchor: [0, 0],
@@ -469,9 +469,9 @@
         });
         function forestLines(feature, color) {
           return {
-            color: 'green',
-            weight: 10,
-            opacity: .7,
+            color: '#33a02c',
+            weight: 2,
+            opacity: .9,
             lineJoin: 'round'
           };
         }
@@ -484,9 +484,9 @@
       }
       function riverLines(feature, color) {
         return {
-          color: 'blue',
-          weight: 10,
-          opacity: .7,
+          color: '#1f78b4',
+          weight: 2,
+          opacity: .9,
           lineJoin: 'round'
         };
       }
