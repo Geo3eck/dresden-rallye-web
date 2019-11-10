@@ -2,148 +2,159 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Dresden Rallye: Challenge your daily route</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito|Roboto|Titillium+Web|Work+Sans&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Dresden Rallye: Challenge your daily route</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    crossorigin=""></script>
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito|Roboto|Titillium+Web|Work+Sans&display=swap"
+    rel="stylesheet">
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
 
 
-    <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
 
 
-    <div class="mapOverlayContainer">
-        <div class="container">
-            <div class="row" style="background-color:#eeeeee;            border-bottom: 2px solid #393e41; line-height: 1;padding:10px 5px 5px 0;">
-                <img src="https://placehold.it/250x50/393e41/ffffff?text=Logo" class="logo" align="left" />
-                <div class="infoText">
-                    Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular ausfüllen und wir fordern dich heraus! Finde eine Route, die die Kriterien erfüllt und entdecke dabei vielleicht sogar neue Orte.
-                </div>
-            </div>
-            <div class="row">
-                <div class="dropDown">
-
-                    <div id="eingabeForm">
-
-                        <div>
-                            Startort
-                            <div class="form-group">
-                                <div class='input-group location'>
-                                    <input id='startauswahl' type='text' class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            Zielort
-                            <div class="form-group">
-                                <div class='input-group location'>
-                                    <input id='endauswahl' type='text' class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <form>
-
-                                Schwierigkeitsgrad wählen:
-                                <fieldset>
-                                    <input type="radio" id="option1" name="Level" value="1">
-                                    <label for="leicht">Leicht</label>
-                                    <input type="radio" id="option2" name="Level" value="2">
-                                    <label for="normal">Normal</label>
-                                    <input type="radio" id="option3" name="Level" value="3">
-                                    <label for="exrem">Extrem</label>
-                                </fieldset>
-                                <br /> Wie viel Zeit hast du?
-                                <fieldset>
-                                    <input type="radio" id="option1" name="Zeit" value="1">
-                                    <label for="viel">Viel</label>
-                                    <input type="radio" id="option2" name="Zeit" value="2">
-                                    <label for="wenig">Wenig</label>
-                                    <input type="radio" id="option3" name="Zeit" value="3">
-                                    <label for="keine">Gar keine</label>
-                                </fieldset>
-                                <br />
-                                <input type="checkbox">
-                                <label class="custom-control-label" for="customSwitches">Hast du einen Schrittzähler?</label>
-                            </form>
-
-                        </div>
-                        <div></div>
-
-                        <div>
-                            früheste Abfahrtzeit
-                            <div class="form-group">
-                                <div class='input-group date' id='startdatumsauswahl'>
-                                    <input type='text' class="form-control" style="z-index: inherit 9;" />
-                                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            späteste Ankunftszeit
-                            <div class="form-group">
-                                <div class='input-group date' id='enddatumsauswahl'>
-                                    <input type='text' class="form-control" />
-                                    <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-calendar"></span>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div style="vertical-align:bottom;text-align: right;"><button class="btn">Start</button>
-                        </div>
-
-
-
-
-                    </div>
-                </div>
-                <div class="selector">
-                    Challenge me!
-                </div>
-
-            </div>
-            <div class="row">
-                <div class='col-sm-12' id="KarteMitPunkt" />
-            </div>
+  <div class="mapOverlayContainer">
+    <div class="container">
+      <div class="row"
+        style="background-color:#eeeeee;            border-bottom: 2px solid #393e41; line-height: 1;padding:10px 5px 5px 0;">
+        <img src="https://placehold.it/250x50/393e41/ffffff?text=Logo" class="logo" align="left" />
+        <div class="infoText">
+          Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen
+          Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular
+          ausfüllen und wir fordern dich heraus! Finde eine Route, die die Kriterien erfüllt und entdecke dabei
+          vielleicht sogar neue Orte.
         </div>
-        <script>
-            // Karte mit Mittelpunkt Dresden erzeugen
-            var laengenGrad = 13.74291803;
-            var breitenGrad = 51.04991538;
-            var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
-            var zoomStufe = 13;
-            var minDate = moment();
-            var maxDate = moment();
-            maxDate.add('1', 'hour');
+      </div>
+      <div class="row">
+        <div class="dropDown">
 
-            var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
-            // Hintergrundkarte setzen
-            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-                attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a>'
-            }).addTo(karte);
+          <div id="eingabeForm">
 
-            var optionen = {
+            <div>
+              Startort
+              <div class="form-group">
+                <div class='input-group location'>
+                  <input id='startauswahl' type='text' class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              Zielort
+              <div class="form-group">
+                <div class='input-group location'>
+                  <input id='endauswahl' type='text' class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <form>
+
+                Schwierigkeitsgrad wählen:
+                <fieldset>
+                  <input type="radio" id="option1" name="Level" value="1">
+                  <label for="leicht">Leicht</label>
+                  <input type="radio" id="option2" name="Level" value="2">
+                  <label for="normal">Normal</label>
+                  <input type="radio" id="option3" name="Level" value="3">
+                  <label for="exrem">Extrem</label>
+                </fieldset>
+                <br /> Wie viel Zeit hast du?
+                <fieldset>
+                  <input type="radio" id="option1" name="Zeit" value="1">
+                  <label for="viel">Viel</label>
+                  <input type="radio" id="option2" name="Zeit" value="2">
+                  <label for="wenig">Wenig</label>
+                  <input type="radio" id="option3" name="Zeit" value="3">
+                  <label for="keine">Gar keine</label>
+                </fieldset>
+                <br />
+                <input type="checkbox">
+                <label class="custom-control-label" for="customSwitches">Hast du einen Schrittzähler?</label>
+              </form>
+
+            </div>
+            <div></div>
+
+            <div>
+              früheste Abfahrtzeit
+              <div class="form-group">
+                <div class='input-group date' id='startdatumsauswahl'>
+                  <input type='text' class="form-control" style="z-index: inherit 9;" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div>
+              späteste Ankunftszeit
+              <div class="form-group">
+                <div class='input-group date' id='enddatumsauswahl'>
+                  <input type='text' class="form-control" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div style="vertical-align:bottom;text-align: right;"><button class="btn">Start</button>
+            </div>
+
+
+
+
+          </div>
+        </div>
+        <div class="selector">
+          Challenge me!
+        </div>
+
+      </div>
+      <div class="row">
+        <div class='col-sm-12' id="KarteMitPunkt" />
+      </div>
+    </div>
+    <script>
+      // Karte mit Mittelpunkt Dresden erzeugen
+      var laengenGrad = 13.74291803;
+      var breitenGrad = 51.04991538;
+      var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
+      var zoomStufe = 13;
+      var minDate = moment();
+      var maxDate = moment();
+      maxDate.add('1', 'hour');
+
+      var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
+      // Hintergrundkarte setzen
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a>'
+      }).addTo(karte);
+
+      var optionen = {
         filter: function (feature, layer) {
           return moment(feature.properties.coordTimes).isBetween(minDate, maxDate);
         }
@@ -169,11 +180,60 @@
         });
       }
 
+      function availableStations(input) {
+        if (!input || input.length < 3) {
+          return []
+        }
+        var inputData = {
+          "query": input,
+          "limit": 10,
+          "stopOnly": false
+        }
+        return $.ajax({
+          async: true,
+          contentType: 'application/json',
+          dataType: 'json',
+          processData: false,
+          type: 'POST',
+          url: 'https://webapi.vvo-online.de/tr/pointfinder',
+          data: JSON.stringify(inputData),
+        });
+      }
+
+      var handleAvailableStationResult = (result, response) => {
+        if (result.Status.Code == 'Ok') {
+          var points = result.Points;
+          var names = []
+          for (index in points) {
+            var point = points[index]
+            names.push({
+              id: point.split('|')[0],
+              label: point.split('|')[3]
+            })
+          }
+          response(names);
+        } else {
+          response(["Fehler in der API"]);
+        }
+      };
+
       $(function () {
         $('#startauswahl').autocomplete({
-          source: availableStations(),
-          minLength: 3
-        });
+          source: (request, response) => {
+            return availableStations(request).then(
+              (result) => handleAvailableStationResult(result, response))
+          },
+          minLength: 2,
+          delay: 100
+        })
+        $('#endauswahl').autocomplete({
+          source: (request, response) => {
+            return availableStations(request).then(
+              (result) => handleAvailableStationResult(result, response))
+          },
+          minLength: 2,
+          delay: 100
+        })
         $('#startdatumsauswahl').datetimepicker({
           defaultDate: minDate,
         });
@@ -200,9 +260,9 @@
         scriptCharset: "utf-8",
         contentType: "application/json; charset=utf-8"
       });
-      var colors = [ "#ff7f00", "#377eb8", "#4daf4a" ]
-      var names = [ "route_car", "route_cycle", "route_walking" ];
-      var labels = [ "Auto", "Fahrrad", "Zu Fuß" ];
+      var colors = ["#ff7f00", "#377eb8", "#4daf4a"]
+      var names = ["route_car", "route_cycle", "route_walking"];
+      var labels = ["Auto", "Fahrrad", "Zu Fuß"];
       var lineStrokeWeights = [8, 4, 2];
 
       var createGeoJsonLayer = function (data, colorName, weight) {
@@ -218,40 +278,39 @@
         return "<span style='color: " + color + "'> " + labels[names.indexOf(name)] + "</span>"
       };
 
-		var handleGeoJsonLayers = function (dataList) {
-			var overlayMaps = {};
-			for (var j = 0; j < dataList.length; j++) {
-				var entry = dataList[j]
-				overlayMaps[layerLegendKey(entry.name)] = entry.geoJsonLayer;
-			}
+      var handleGeoJsonLayers = function (dataList) {
+        var overlayMaps = {};
+        for (var j = 0; j < dataList.length; j++) {
+          var entry = dataList[j]
+          overlayMaps[layerLegendKey(entry.name)] = entry.geoJsonLayer;
+        }
 
-			var baseMaps = {};
-			L.control.layers(baseMaps, overlayMaps).addTo(karte);
-			names.forEach(name => overlayMaps[layerLegendKey(name)].addTo(karte));
-		};
-		var promises = [];
-		for (var i = 0; i < names.length; i++) {
-			var name = names[i]
-			var color = colors[i];
-			var lineStrokeWeight = lineStrokeWeights[i];
-			var path = `data/example/${name}.geojson`;
-			var promise = Promise.all([$.getJSON(path), Promise.resolve(color),
-				Promise.resolve(lineStrokeWeight), Promise.resolve(name)])
-			promises.push(promise.then(data => {
-				return {
-					geoJsonLayer: createGeoJsonLayer(data[0], data[1], data[2]),
-					name: data[3]
-				}
-			}));
-		}
-		Promise.all(promises).then(dataList => handleGeoJsonLayers(dataList));
+        var baseMaps = {};
+        L.control.layers(baseMaps, overlayMaps).addTo(karte);
+        names.forEach(name => overlayMaps[layerLegendKey(name)].addTo(karte));
+      };
+      var promises = [];
+      for (var i = 0; i < names.length; i++) {
+        var name = names[i]
+        var color = colors[i];
+        var lineStrokeWeight = lineStrokeWeights[i];
+        var path = `data/example/${name}.geojson`;
+        var promise = Promise.all([$.getJSON(path), Promise.resolve(color),
+        Promise.resolve(lineStrokeWeight), Promise.resolve(name)])
+        promises.push(promise.then(data => {
+          return {
+            geoJsonLayer: createGeoJsonLayer(data[0], data[1], data[2]),
+            name: data[3]
+          }
+        }));
+      }
+      Promise.all(promises).then(dataList => handleGeoJsonLayers(dataList));
 
+      $('.selector').click(function () {
+        $('.dropDown').slideToggle(300);
+      });
 
-            $('.selector').click(function() {
-                $('.dropDown').slideToggle(300);
-            });
-
-        </script>
+    </script>
 </body>
 
 </html>
