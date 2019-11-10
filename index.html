@@ -37,6 +37,7 @@
                     Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular ausfüllen und wir fordern dich heraus! Finde eine Route, die die Kriterien erfüllt und entdecke dabei vielleicht sogar neue Orte. 
                 </div>
             </div>
+
             <div class="row">
                 <div class="dropDown">
                     <div id="eingabeForm">
@@ -105,9 +106,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="vertical-align:bottom;text-align: right;"><button class="btn">Challenge me!</button>
+                        <div style="vertical-align:bottom;text-align: right;"><button id="challenge" class="btn">Challenge me!</button>
                         </div>
-                        <div id="challenge">
+                        <div>
                             <p><small>Klicke auf den <b>"Challenge me!"-</b>Button, um deine heutige Aufgabe gemäß deinen Angaben zu bekommen.</small></p>
                             <p id="aufgabe">Deine heutige Challenge: <b>Versuche dein Ziel in maximal 15 Minuten zu erreichen (100 Punkte)</b>.</p>
                         </div>
@@ -138,22 +139,23 @@
                     <div><a href="https://www.flaticon.com/free-icon/checkered-flag_67160" target="_blank">Freepik (Flaticon)</a></div>
                     <div>Flag-Icon</div>
                 </div>
+
         </div>
         </div>
 
-        
-        <script>
-            // Karte mit Mittelpunkt Dresden erzeugen
-            var laengenGrad = 13.74291803;
-            var breitenGrad = 51.04991538;
-            var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
-            var zoomStufe = 13;
-            var minDate = moment();
-            var maxDate = moment();
-            maxDate.add('1', 'hour');
-            var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
-            // Hintergrundkarte setzen
-            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+      var visible = false;
+
+      // Karte mit Mittelpunkt Dresden erzeugen
+      var laengenGrad = 13.74291803;
+      var breitenGrad = 51.04991538;
+      var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
+      var zoomStufe = 13;
+      var minDate = moment();
+      var maxDate = moment();
+      maxDate.add('1', 'hour');
+      var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
+      // Hintergrundkarte setzen
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
                 attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a> | <a href="#" id="opener"> Datenquellen</a>'
             }).addTo(karte);
 
@@ -270,24 +272,25 @@
 
             var collectedFeatureLineItems = []
 
-            var createGeoJsonLayer = function(data, colorName, weight) {
-                var style = {
-                    weight: weight,
-                    color: colorName,
-                    fillOpacity: 0
-                }
-                return L.geoJson(data, {
-                    style: style,
-                    filter: function(feature) {
-                        feature.geometry.coordinates.forEach(item => collectedFeatureLineItems.push(item))
-                        return feature;
-                    }
-                });
-            };
-            var layerLegendKey = function(name) {
-                var color = colors[names.indexOf(name)];
-                return "<img src='https://placehold.it/12/" + color.substr(1) + "/000000?text=+' style='display:inline'> " + labels[names.indexOf(name)]
-            };
+
+      var createGeoJsonLayer = function (data, colorName, weight) {
+        var style = {
+          weight: weight,
+          color: colorName,
+          fillOpacity: 0
+        }
+        return L.geoJson(data, {
+          style: style,
+          filter: function (feature) {
+            feature.geometry.coordinates.forEach(item => collectedFeatureLineItems.push(item))
+            return feature;
+          }
+        });
+      };
+      var layerLegendKey = function (name) {
+        var color = colors[names.indexOf(name)];
+        return "<img src='https://placehold.it/12/" + color.substr(1) + "/000000?text=+' style='display:inline'> " + labels[names.indexOf(name)]
+      };
 
             var handleGeoJsonLayers = function(dataList) {
                 var overlayMaps = {};
@@ -296,33 +299,22 @@
                     overlayMaps[layerLegendKey(entry.name)] = entry.geoJsonLayer;
                 }
 
-                var baseMaps = {};
-                L.control.layers(baseMaps, overlayMaps).addTo(karte);
-                names.forEach(name => overlayMaps[layerLegendKey(name)].addTo(karte));
-            };
-            var promises = [];
-            for (var i = 0; i < names.length; i++) {
-                var name = names[i]
-                var color = colors[i];
-                var lineStrokeWeight = lineStrokeWeights[i];
-                var path = `data/example/${name}.geojson`;
-                var promise = Promise.all([$.getJSON(path), Promise.resolve(color),
-                    Promise.resolve(lineStrokeWeight), Promise.resolve(name)
-                ])
-                promises.push(promise.then(data => {
-                    return {
-                        geoJsonLayer: createGeoJsonLayer(data[0], data[1], data[2]),
-                        name: data[3]
-                    }
-                }));
-            }
-            Promise.all(promises).then(dataList => handleGeoJsonLayers(dataList));
 
-            $('.selector').click(function() {
-                $('.dropDown').slideToggle(300);
-            });
-            
-            $(function() {
+        var baseMaps = {};
+        L.control.layers(baseMaps, overlayMaps).addTo(karte);
+        names.forEach(name => visible ? overlayMaps[layerLegendKey(name)].addTo(karte) : null);
+      };
+
+      $('.selector').click(function () {
+        $('.dropDown').slideToggle(300);
+      });
+      $('#challenge').click(function () {
+        makeVisible()
+        $('.dropDown').slideToggle(300);
+        update();
+      });
+    
+        $(function() {
             $( "#dialog" ).dialog({
                autoOpen: false,  
                 width: 500
@@ -332,217 +324,224 @@
             });
          });
 
-            {
-                $.getJSON("data/DVB-bus_stops.geojson", function(data) {
-                    var geojsonEbene = L.geoJson(data);
-                    karte.addLayer(geojsonEbene);
-                });
-            }
-            var redIcon = new L.Icon({
-                // Quelle der Icons: https://github.com/pointhi/leaflet-color-markers
-                iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                iconSize: [25, 41],
-                iconAnchor: [12, 41],
-                popupAnchor: [0, 0],
-                shadowSize: [41, 41]
-            }); {
-                var teilAutoIcon = new L.Icon({
-                    iconUrl: 'data/icons/teilauto.png',
-                    iconSize: [30, 30],
-                    iconAnchor: [12, 41],
-                    popupAnchor: [0, 0],
-                    shadowSize: [30, 30]
-                });
-                $.getJSON("data/Carsharing_Station.geojson", function(data) {
-                    var carCharingEbene = L.geoJson(data, {
-                        pointToLayer: function(feature, latlng) {
-                            var newCoords = feature.geometry.coordinates
-                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
-                                units: 'kilometers'
-                            })
-                            if (dist < 0.5) {
-                                return L.marker(latlng, {
-                                    icon: teilAutoIcon
-                                });
-                            } else {
-                                return null
-                            }
-                        }
-                    });
-                    karte.addLayer(carCharingEbene);
-                });
-            } {
+      function update() {
+        if (visible) {
+          var promises = [];
+          for (var i = 0; i < names.length; i++) {
+            var name = names[i]
+            var color = colors[i];
+            var lineStrokeWeight = lineStrokeWeights[i];
+            var path = `data/example/${name}.geojson`;
+            var promise = Promise.all([$.getJSON(path), Promise.resolve(color),
+            Promise.resolve(lineStrokeWeight), Promise.resolve(name)])
+            promises.push(promise.then(data => {
+              return {
+                geoJsonLayer: createGeoJsonLayer(data[0], data[1], data[2]),
+                name: data[3]
+              }
+            }));
+          }
+          Promise.all(promises).then(dataList => handleGeoJsonLayers(dataList));
+        }
 
-                var busIcon = new L.Icon({
-                    iconUrl: 'data/icons/bus_pin.png',
-                    iconSize: [20, 20],
-                    iconAnchor: [0, 0],
-                    popupAnchor: [0, 0],
-                    shadowSize: [12, 12]
-                });
-                $.getJSON("data/VVO-bus_stops.geojson", function(data) {
-                    var busEbene = L.geoJson(data, {
-                        pointToLayer: function(feature, latlng) {
-                            var newCoords = feature.geometry.coordinates
-                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
-                                units: 'kilometers'
-                            })
-                            if (dist < 0.5) {
-                                return L.marker(latlng, {
-                                    icon: busIcon
-                                });
-                            } else {
-                                return null
-                            }
-                        }
-                    });
-                    karte.addLayer(busEbene);
-                });
-            } {
-                var tramIcon = new L.Icon({
-                    iconUrl: 'data/icons/Tram-Logo.png',
-                    iconSize: [20, 20],
-                    iconAnchor: [0, 0],
-                    popupAnchor: [0, 0],
-                    shadowSize: [12, 12]
-                });
-                $.getJSON("data/DVB-tram_stops.geojson", function(data) {
-                    var tramEbene = L.geoJson(data, {
-                        pointToLayer: function(feature, latlng) {
-                            var newCoords = feature.geometry.coordinates
-                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
-                                units: 'kilometers'
-                            })
-                            if (dist < 0.5) {
-                                return L.marker(latlng, {
-                                    icon: tramIcon
-                                });
-                            } else {
-                                return null
-                            }
-                        }
-                    });
-                    karte.addLayer(tramEbene);
-                });
-            } {
-                var mobiIcon = new L.Icon({
-                    iconUrl: 'data/icons/News_332px_249px_MOBI.png',
-                    iconSize: [30, 30],
-                    iconAnchor: [0, 0],
-                    popupAnchor: [0, 0],
-                    shadowSize: [30, 30]
-                });
-                $.getJSON("data/Mobipunkte-aktiv.geojson", function(data) {
-                    var mobiEbene = L.geoJson(data, {
-                        pointToLayer: function(feature, latlng) {
-                            var newCoords = feature.geometry.coordinates
-                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
-                                units: 'kilometers'
-                            })
-                            if (dist < 0.5) {
-                                return L.marker(latlng, {
-                                    icon: mobiIcon
-                                });
-                            } else {
-                                return null
-                            }
-                        }
-                    });
-                    karte.addLayer(mobiEbene);
-                });
-            } {
-                var monuIcon = new L.Icon({
-                    iconUrl: 'data/icons/sightseeing.png',
-                    iconSize: [20, 20],
-                    iconAnchor: [0, 0],
-                    popupAnchor: [0, 0],
-                    shadowSize: [30, 30]
-                });
-                $.getJSON("data/Sehenswuerdigkeiten.geojson", function(data) {
-                    var monuEbene = L.geoJson(data, {
-                        pointToLayer: function(feature, latlng) {
-                            var newCoords = feature.geometry.coordinates
-                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
-                                units: 'kilometers'
-                            })
-                            if (dist < 0.5) {
-                                return L.marker(latlng, {
-                                    icon: monuIcon
-                                });
-                            } else {
-                                return null
-                            }
-                        }
-                    });
-                    karte.addLayer(monuEbene);
-                });
-            } {
-                var parkIcon = new L.Icon({
-                    iconUrl: 'data/icons/park_pin.png',
-                    iconSize: [20, 20],
-                    iconAnchor: [0, 0],
-                    popupAnchor: [0, 0],
-                    shadowSize: [14, 14]
-                });
-                $.getJSON("data/park.geojson", function(data) {
-                    var parkEbene = L.geoJson(data, {
-                        pointToLayer: function(feature, latlng) {
-                            var newCoords = feature.geometry.coordinates
-                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
-                                units: 'kilometers'
-                            })
-                            if (dist < 0.5) {
-                                return L.marker(latlng, {
-                                    icon: parkIcon
-                                });
-                            } else {
-                                return null
-                            }
-                        }
-                    });
-                    karte.addLayer(parkEbene);
-                });
-            } {
-                var forestIcon = new L.Icon({
-                    iconUrl: 'data/icons/forest.png',
-                    iconSize: [30, 30],
-                    iconAnchor: [0, 0],
-                    popupAnchor: [0, 0],
-                    shadowSize: [30, 30]
-                });
-
-                function forestLines(feature, color) {
-                    return {
-                        color: '#33a02c',
-                        weight: 2,
-                        opacity: .9,
-                        lineJoin: 'round'
-                    };
+        if (visible) {
+          $.getJSON("data/DVB-bus_stops.geojson", function (data) {
+            var geojsonEbene = L.geoJson(data);
+            karte.addLayer(geojsonEbene);
+          });
+        }
+        var redIcon = new L.Icon({
+          // Quelle der Icons: https://github.com/pointhi/leaflet-color-markers
+          iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [0, 0],
+          shadowSize: [41, 41]
+        });
+        if (visible) {
+          var teilAutoIcon = new L.Icon({
+            iconUrl: 'data/icons/teilauto.png',
+            iconSize: [30, 30],
+            iconAnchor: [12, 41],
+            popupAnchor: [0, 0],
+            shadowSize: [30, 30]
+          });
+          $.getJSON("data/Carsharing_Station.geojson", function (data) {
+            var carCharingEbene = L.geoJson(data, {
+              pointToLayer: function (feature, latlng) {
+                var newCoords = feature.geometry.coordinates
+                var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+                if (dist < 0.5) {
+                  return L.marker(latlng, { icon: teilAutoIcon });
+                } else {
+                  return null
                 }
-                $.getJSON("data/waldflaechen.geojson", function(data) {
-                    var forestEbene = L.geoJson(data, {
-                        style: forestLines
-                    });
-                    karte.addLayer(forestEbene);
-                });
-            }
-
-            function riverLines(feature, color) {
-                return {
-                    color: '#1f78b4',
-                    weight: 2,
-                    opacity: .9,
-                    lineJoin: 'round'
-                };
-            }
-            $.getJSON("data/Elbe.geojson", function(data) {
-                var riverEbene = L.geoJson(data, {
-                    style: riverLines
-                });
-                karte.addLayer(riverEbene);
+              }
             });
+            karte.addLayer(carCharingEbene);
+          });
+        }
+        if (visible) {
 
+          var busIcon = new L.Icon({
+            iconUrl: 'data/icons/bus_pin.png',
+            iconSize: [20, 20],
+            iconAnchor: [0, 0],
+            popupAnchor: [0, 0],
+            shadowSize: [12, 12]
+          });
+          $.getJSON("data/VVO-bus_stops.geojson", function (data) {
+            var busEbene = L.geoJson(data, {
+              pointToLayer: function (feature, latlng) {
+                var newCoords = feature.geometry.coordinates
+                var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+                if (dist < 0.5) {
+                  return L.marker(latlng, { icon: busIcon });
+                } else {
+                  return null
+                }
+              }
+            });
+            karte.addLayer(busEbene);
+          });
+        }
+        if (visible) {
+          var tramIcon = new L.Icon({
+            iconUrl: 'data/icons/Tram-Logo.png',
+            iconSize: [20, 20],
+            iconAnchor: [0, 0],
+            popupAnchor: [0, 0],
+            shadowSize: [12, 12]
+          });
+          $.getJSON("data/DVB-tram_stops.geojson", function (data) {
+            var tramEbene = L.geoJson(data, {
+              pointToLayer: function (feature, latlng) {
+                var newCoords = feature.geometry.coordinates
+                var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+                if (dist < 0.5) {
+                  return L.marker(latlng, { icon: tramIcon });
+                } else {
+                  return null
+                }
+              }
+            });
+            karte.addLayer(tramEbene);
+          });
+        }
+        if (visible) {
+          var mobiIcon = new L.Icon({
+            iconUrl: 'data/icons/News_332px_249px_MOBI.png',
+            iconSize: [30, 30],
+            iconAnchor: [0, 0],
+            popupAnchor: [0, 0],
+            shadowSize: [30, 30]
+          });
+          $.getJSON("data/Mobipunkte-aktiv.geojson", function (data) {
+            var mobiEbene = L.geoJson(data, {
+              pointToLayer: function (feature, latlng) {
+                var newCoords = feature.geometry.coordinates
+                var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+                if (dist < 0.5) {
+                  return L.marker(latlng, { icon: mobiIcon });
+                } else {
+                  return null
+                }
+              }
+            });
+            karte.addLayer(mobiEbene);
+          });
+        }
+        if (visible) {
+          var monuIcon = new L.Icon({
+            iconUrl: 'data/icons/sightseeing.png',
+            iconSize: [20, 20],
+            iconAnchor: [0, 0],
+            popupAnchor: [0, 0],
+            shadowSize: [30, 30]
+          });
+          $.getJSON("data/Sehenswuerdigkeiten.geojson", function (data) {
+            var monuEbene = L.geoJson(data, {
+              pointToLayer: function (feature, latlng) {
+                var newCoords = feature.geometry.coordinates
+                var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+                if (dist < 0.5) {
+                  return L.marker(latlng, { icon: monuIcon });
+                } else {
+                  return null
+                }
+              }
+            });
+            karte.addLayer(monuEbene);
+          });
+        }
+        if (visible) {
+          var parkIcon = new L.Icon({
+            iconUrl: 'data/icons/park_pin.png',
+            iconSize: [20, 20],
+            iconAnchor: [0, 0],
+            popupAnchor: [0, 0],
+            shadowSize: [14, 14]
+          });
+          $.getJSON("data/park.geojson", function (data) {
+            var parkEbene = L.geoJson(data, {
+              pointToLayer: function (feature, latlng) {
+                var newCoords = feature.geometry.coordinates
+                var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+                if (dist < 0.5) {
+                  return L.marker(latlng, { icon: parkIcon });
+                } else {
+                  return null
+                }
+              }
+            });
+            karte.addLayer(parkEbene);
+          });
+        }
+        if (visible) {
+          var forestIcon = new L.Icon({
+            iconUrl: 'data/icons/forest.png',
+            iconSize: [30, 30],
+            iconAnchor: [0, 0],
+            popupAnchor: [0, 0],
+            shadowSize: [30, 30]
+          });
+          function forestLines(feature, color) {
+            return {
+              color: '#33a02c',
+              weight: 2,
+              opacity: .9,
+              lineJoin: 'round'
+            };
+          }
+          $.getJSON("data/waldflaechen.geojson", function (data) {
+            var forestEbene = L.geoJson(data, {
+              style: forestLines
+            });
+            karte.addLayer(forestEbene);
+          });
+        }
+        if (visible) {
+          function riverLines(feature, color) {
+            return {
+              color: '#1f78b4',
+              weight: 2,
+              opacity: .9,
+              lineJoin: 'round'
+            };
+          }
+          $.getJSON("data/Elbe.geojson", function (data) {
+            var riverEbene = L.geoJson(data, {
+              style: riverLines
+            });
+            karte.addLayer(riverEbene);
+          });
+        }
+      }
+
+      var makeVisible = () => {
+        visible = true;
+      }
         </script>
 </body>
 
