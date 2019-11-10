@@ -273,7 +273,7 @@
       };
       var layerLegendKey = function (name) {
         var color = colors[names.indexOf(name)];
-        return "<span style='color: " + color + "'> " + labels[names.indexOf(name)] + "</span>"
+        return "<img src='https://placehold.it/12/" + color.substr(1) + "/000000?text=+' style='display:inline'> " + labels[names.indexOf(name)]
       };
 
       var handleGeoJsonLayers = function (dataList) {
