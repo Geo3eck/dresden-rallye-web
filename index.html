@@ -141,6 +141,18 @@
         attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a>'
       }).addTo(karte);
 
+      var polygonMittelpunkt = function (arr) {
+        var arrToUse;
+        if (arr.length == 1) {
+          arrToUse = arr[0];
+        } else {
+          arrToUse = arr;
+        }
+        return arrToUse.reduce(function (x, y) {
+          return [x[0] + y[0] / arrToUse.length, x[1] + y[1] / arrToUse.length]
+        }, [0, 0])
+      };
+
       var optionen = {
         filter: function (feature, layer) {
           return moment(feature.properties.coordTimes).isBetween(minDate, maxDate);
@@ -150,22 +162,6 @@
       var hoverZuMarkerAbstand = function (aktuelleZoomStufe) {
         return 0.39 / Math.pow(2, aktuelleZoomStufe - 6);
       };
-
-      function availableStations() {
-        $.post("https://webapi.vvo-online.de/tr/pointfinder", {
-          "query": "Albert",
-          "limit": 10,
-          "stopOnly": false
-        }, function (data) {
-          if (data.Status.Code == 'Ok') {
-            var points = data.Points;
-            var names = points.map(point => point.split('|')[3])
-            return names;
-          } else {
-            return "Fehler in der API";
-          }
-        });
-      }
 
       function availableStations(input) {
         if (!input || input.length < 3) {
@@ -273,6 +269,70 @@
         return "<span style='color: " + color + "'> " + labels[names.indexOf(name)] + "</span>"
       };
 
+      var carEventHandler = function(geojsonEbene) {
+        var geojsonEbenenHover;
+        geojsonEbene.on('mouseover', function (ereignis) {
+          var koordinaten = ereignis.layer.feature.geometry.coordinates;
+          var centroid = polygonMittelpunkt(koordinaten[0])
+            var hoverKoordinaten = [centroid[1], centroid[0]];
+          if (karte) {
+            var name = "Strecke mit Auto"
+            geojsonEbenenHover = L.popup()
+              .setLatLng(hoverKoordinaten)
+              .setContent(name)
+              .openOn(karte);
+          }
+        });
+        geojsonEbene.on('mouseout', function (ereignis) {
+          if (geojsonEbenenHover && karte) {
+            karte.closePopup(geojsonEbenenHover);
+            geojsonEbenenHover = null;
+          }
+        });
+      };
+      var bikeEventHandler = function(geojsonEbene) {
+        var geojsonEbenenHover;
+        geojsonEbene.on('mouseover', function (ereignis) {
+          var koordinaten = ereignis.layer.feature.geometry.coordinates;
+          var centroid = polygonMittelpunkt(koordinaten[0])
+            var hoverKoordinaten = [centroid[1], centroid[0]];
+          if (karte) {
+            var name = "Strecke mit Fahrrad"
+            geojsonEbenenHover = L.popup()
+              .setLatLng(hoverKoordinaten)
+              .setContent(name)
+              .openOn(karte);
+          }
+        });
+        geojsonEbene.on('mouseout', function (ereignis) {
+          if (geojsonEbenenHover && karte) {
+            karte.closePopup(geojsonEbenenHover);
+            geojsonEbenenHover = null;
+          }
+        });
+      };
+      var walkerEventHandler = function(geojsonEbene) {
+        var geojsonEbenenHover;
+        geojsonEbene.on('mouseover', function (ereignis) {
+          var koordinaten = ereignis.layer.feature.geometry.coordinates;
+          var centroid = polygonMittelpunkt(koordinaten[0])
+            var hoverKoordinaten = [centroid[1], centroid[0]];
+          if (karte) {
+            var name = "Strecke zu Fuß"
+            geojsonEbenenHover = L.popup()
+              .setLatLng(hoverKoordinaten)
+              .setContent(name)
+              .openOn(karte);
+          }
+        });
+        geojsonEbene.on('mouseout', function (ereignis) {
+          if (geojsonEbenenHover && karte) {
+            karte.closePopup(geojsonEbenenHover);
+            geojsonEbenenHover = null;
+          }
+        });
+      };
+      var eventHandlerFunctions = [ walkerEventHandler, bikeEventHandler, carEventHandler  ];
       var handleGeoJsonLayers = function (dataList) {
         var overlayMaps = {};
         for (var j = 0; j < dataList.length; j++) {
@@ -283,6 +343,7 @@
         var baseMaps = {};
         L.control.layers(baseMaps, overlayMaps).addTo(karte);
         names.forEach(name => overlayMaps[layerLegendKey(name)].addTo(karte));
+        names.forEach(name => eventHandlerFunctions[names.indexOf(name)](overlayMaps[layerLegendKey(name)]));
       };
       var promises = [];
       for (var i = 0; i < names.length; i++) {
@@ -496,6 +557,23 @@
         karte.addLayer(riverEbene);
       });
 
+      var handleRequest = () => {
+        var start = $('#startauswahl').val()
+        var end = $('#endauswahl').val()
+        var startDatum = $('#startdatumsauswahl').val()
+        var endDatum = $('#enddatumsauswahl').val()
+        var foundStart = start.key;
+        var foundEnd = end.key;
+        var transports = [ 'foot-walking', 'driving-car', 'cycling-regular' ]
+        for (index in transports) {
+          var foundWalkingRoutes = $.post({
+            url: `https://api.openrouteservice.org/v2/directions/${transport}/geojson?api_key=5b3ce3597851110001cf62481e362cda48304c4d802f81aa345522f1`,
+            data: {
+              "coordinates": [[13.7367356262136,51.02781495], [13.7548002,51.0707423]]
+            }
+          });
+        }
+      };
     </script>
 </body>
 
