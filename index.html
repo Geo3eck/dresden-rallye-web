@@ -350,10 +350,16 @@
           popupAnchor: [0, 0],
           shadowSize: [12, 12]
         });
-        $.getJSON("data/DVB-bus.geojson", function (data) {
+        $.getJSON("data/VVO-bus_stops.geojson", function (data) {
           var busEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
-              return L.marker(latlng, { icon: busIcon });
+              var newCoords = feature.geometry.coordinates
+              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+              if (dist < 0.5) {
+                return L.marker(latlng, { icon: busIcon });
+              } else {
+                return null
+              }
             }
           });
           karte.addLayer(busEbene);
@@ -370,7 +376,13 @@
         $.getJSON("data/DVB-tram_stops.geojson", function (data) {
           var tramEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
-              return L.marker(latlng, { icon: tramIcon });
+              var newCoords = feature.geometry.coordinates
+              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+              if (dist < 0.5) {
+                return L.marker(latlng, { icon: tramIcon });
+              } else {
+                return null
+              }
             }
           });
           karte.addLayer(tramEbene);
@@ -387,7 +399,13 @@
         $.getJSON("data/Mobipunkte-aktiv.geojson", function (data) {
           var mobiEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
-              return L.marker(latlng, { icon: mobiIcon });
+              var newCoords = feature.geometry.coordinates
+              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+              if (dist < 0.5) {
+                return L.marker(latlng, { icon: mobiIcon });
+              } else {
+                return null
+              }
             }
           });
           karte.addLayer(mobiEbene);
@@ -404,7 +422,13 @@
         $.getJSON("data/Sehenswuerdigkeiten.geojson", function (data) {
           var monuEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
-              return L.marker(latlng, { icon: monuIcon });
+              var newCoords = feature.geometry.coordinates
+              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+              if (dist < 0.5) {
+                return L.marker(latlng, { icon: monuIcon });
+              } else {
+                return null
+              }
             }
           });
           karte.addLayer(monuEbene);
@@ -421,7 +445,13 @@
         $.getJSON("data/park.geojson", function (data) {
           var parkEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
-              return L.marker(latlng, { icon: parkIcon });
+              var newCoords = feature.geometry.coordinates
+              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
+              if (dist < 0.5) {
+                return L.marker(latlng, { icon: parkIcon });
+              } else {
+                return null
+              }
             }
           });
           karte.addLayer(parkEbene);
