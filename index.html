@@ -261,9 +261,10 @@
           fillOpacity: 0
         }
         return L.geoJson(data, {
+          style: style,
           filter: function(feature) {
-            console.log("Aggr" + JSON.stringify())
             feature.geometry.coordinates.forEach(item => collectedFeatureLineItems.push(item))
+            return feature;
           }
         });
       };
