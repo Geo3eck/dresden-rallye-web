@@ -346,7 +346,7 @@
         var teilAutoIcon = new L.Icon({
           iconUrl: 'data/icons/120px-BUS-Logo-BVG.svg.png',
           iconSize: [12, 12],
-          iconAnchor: [12, 12],
+          iconAnchor: [0, 0],
           popupAnchor: [0, 0],
           shadowSize: [12, 12]
         });
@@ -363,7 +363,7 @@
         var tramIcon = new L.Icon({
           iconUrl: 'data/icons/Tram-Logo.svg.png',
           iconSize: [12, 12],
-          iconAnchor: [12, 41],
+          iconAnchor: [0, 0],
           popupAnchor: [0, 0],
           shadowSize: [12, 12]
         });
@@ -377,23 +377,75 @@
         });
       }
       {
-        var busIcon = new L.Icon({
+        var mobiIcon = new L.Icon({
           iconUrl: 'data/icons/News_332px_249px_MOBI.png',
           iconSize: [30, 30],
-          iconAnchor: [12, 41],
+          iconAnchor: [0, 0],
           popupAnchor: [0, 0],
           shadowSize: [30, 30]
         });
           $.getJSON("data/Mobipunkte-aktiv.geojson", function (data) {
           var geojsonEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
-              return L.marker(latlng, { icon: busIcon });
+              return L.marker(latlng, { icon: mobiIcon });
+            }
+          });
+          karte.addLayer(geojsonEbene);
+        });
+      }
+      {
+        var monuIcon = new L.Icon({
+          iconUrl: 'data/icons/Openstreetmap_Carto_monument.svg',
+          iconSize: [30, 30],
+          iconAnchor: [0, 0],
+          popupAnchor: [0, 0],
+          shadowSize: [30, 30]
+        });
+          $.getJSON("data/Sehenswuerdigkeiten.geojson", function (data) {
+          var geojsonEbene = L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+              return L.marker(latlng, { icon: monuIcon });
+            }
+          });
+          karte.addLayer(geojsonEbene);
+        });
+      }
+        {
+        var parkIcon = new L.Icon({
+          iconUrl: 'data/icons/park.png',
+          iconSize: [30, 30],
+          iconAnchor: [0, 0],
+          popupAnchor: [0, 0],
+          shadowSize: [30, 30]
+        });
+        $.getJSON("data/park.geojson", function (data) {
+          var parkEbene = L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+              return L.marker(latlng, { icon: parkIcon });
+            }
+          });
+          karte.addLayer(geojsonEbene);
+        });
+      }
+      {
+        var forestIcon = new L.Icon({
+          iconUrl: 'data/icons/forest.png',
+          iconSize: [30, 30],
+          iconAnchor: [0, 0],
+          popupAnchor: [0, 0],
+          shadowSize: [30, 30]
+        });
+        $.getJSON("data/waldflaechen.geojson", function (data) {
+          var parkEbene = L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+              return L.marker(latlng, { icon: forestIcon });
             }
           });
           karte.addLayer(geojsonEbene);
         });
       }
 
+      
     </script>
 </body>
 
