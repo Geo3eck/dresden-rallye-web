@@ -2,505 +2,548 @@
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Dresden Rallye: Challenge your daily route</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Dresden Rallye: Challenge your daily route</title>
     <link rel="shortcut icon" href="data/icons/fav.ico" />
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
-    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
-    crossorigin="" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-  <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
-    integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
-    crossorigin=""></script>
-  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito|Roboto|Titillium+Web|Work+Sans&display=swap"
-    rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Nunito|Roboto|Titillium+Web|Work+Sans&display=swap" rel="stylesheet">
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-  <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
 
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
 
 
-  <div class="mapOverlayContainer">
-    <div class="container">
-      <div class="row"
-        style="background-color:#eeeeee;            border-bottom: 2px solid #393e41; line-height: 1;padding:10px 5px 5px 5px;">
-        <img src="data/icons/logo.png" class="logo" align="left" />
-        <div class="infoText">
-          Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen
-          Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular
-          ausfüllen und wir fordern dich heraus! Finde eine Route, die die Kriterien erfüllt und entdecke dabei
-          vielleicht sogar neue Orte.
-        </div>
-      </div>
-      <div class="row">
-        <div class="dropDown">
-          <div id="eingabeForm">
-            <div>
-              Startort
-              <div class="form-group">
-                <div class='input-group location'>
-                  <input id='startauswahl' type='text' class="form-control" />
+    <div class="mapOverlayContainer">
+        <div class="container">
+            <div class="row" style="background-color:#eeeeee;            border-bottom: 2px solid #393e41; line-height: 1;padding:10px 5px 5px 5px;">
+                <img src="data/icons/logo.png" class="logo" align="left" />
+                <div class="infoText">
+                    Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular ausfüllen und wir fordern dich heraus! Finde eine Route, die die Kriterien erfüllt und entdecke dabei vielleicht sogar neue Orte. 
                 </div>
-              </div>
             </div>
-            <div>
-              Zielort
-              <div class="form-group">
-                <div class='input-group location'>
-                  <input id='endauswahl' type='text' class="form-control" />
-                </div>
-              </div>
-            </div>
-            <div>
-              <form>
-                Schwierigkeitsgrad wählen:
-                <fieldset>
-                  <input type="radio" id="option1" name="Level" value="1">
-                  <label for="leicht">Leicht</label>
-                  <input type="radio" id="option2" name="Level" value="2">
-                  <label for="normal">Normal</label>
-                  <input type="radio" id="option3" name="Level" value="3">
-                  <label for="exrem">Extrem</label>
-                </fieldset>
-                <br /> Wie viel Zeit hast du?
-                <fieldset>
-                  <input type="radio" id="option1" name="Zeit" value="1">
-                  <label for="viel">Viel</label>
-                  <input type="radio" id="option2" name="Zeit" value="2">
-                  <label for="wenig">Wenig</label>
-                  <input type="radio" id="option3" name="Zeit" value="3">
-                  <label for="keine">Gar keine</label>
-                </fieldset>
-                <br />
-                <input type="checkbox">
-                <label class="custom-control-label" for="customSwitches">Hast du einen Schrittzähler?</label>
-              </form>
-            </div>
-            <div>  </div>
-            <div>
-              früheste Abfahrtzeit
-              <div class="form-group">
-                <div class='input-group date' id='startdatumsauswahl'>
-                  <input type='text' class="form-control" style="z-index: inherit 9;" />
-                  <span class="input-group-addon">
+            <div class="row">
+                <div class="dropDown">
+                    <div id="eingabeForm">
+                        <div>
+                            Startort
+                            <div class="form-group">
+                                <div class='input-group location'>
+                                    <input id='startauswahl' type='text' class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            Zielort
+                            <div class="form-group">
+                                <div class='input-group location'>
+                                    <input id='endauswahl' type='text' class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <form>
+                                Schwierigkeitsgrad wählen:
+                                <fieldset>
+                                    <input type="radio" id="option1" name="Level" value="1">
+                                    <label for="leicht">Leicht</label>
+                                    <input type="radio" id="option2" name="Level" value="2">
+                                    <label for="normal">Normal</label>
+                                    <input type="radio" id="option3" name="Level" value="3">
+                                    <label for="exrem">Extrem</label>
+                                </fieldset>
+                                <br /> Wie viel Zeit hast du?
+                                <fieldset>
+                                    <input type="radio" id="option1" name="Zeit" value="1">
+                                    <label for="viel">Viel</label>
+                                    <input type="radio" id="option2" name="Zeit" value="2">
+                                    <label for="wenig">Wenig</label>
+                                    <input type="radio" id="option3" name="Zeit" value="3">
+                                    <label for="keine">Gar keine</label>
+                                </fieldset>
+                                <br />
+                                <input type="checkbox">
+                                <label class="custom-control-label" for="customSwitches">Hast du einen Schrittzähler?</label>
+                            </form>
+                        </div>
+                        <div style="text-align: right;"> <b>Dein aktueller Punktestand:</b> <br />
+                            <span style="font-size: 1.2em; text-align: center">375</span> </div>
+                        <div>
+                            früheste Abfahrtzeit
+                            <div class="form-group">
+                                <div class='input-group date' id='startdatumsauswahl'>
+                                    <input type='text' class="form-control" style="z-index: inherit 9;" />
+                                    <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div>
-              späteste Ankunftszeit
-              <div class="form-group">
-                <div class='input-group date' id='enddatumsauswahl'>
-                  <input type='text' class="form-control" />
-                  <span class="input-group-addon">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            späteste Ankunftszeit
+                            <div class="form-group">
+                                <div class='input-group date' id='enddatumsauswahl'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="vertical-align:bottom;text-align: right;"><button class="btn">Challenge me!</button>
+                        </div>
+                        <div id="challenge">
+                            <p><small>Klicke auf den <b>"Challenge me!"-</b>Button, um deine heutige Aufgabe gemäß deinen Angaben zu bekommen.</small></p>
+                            <p id="aufgabe">Deine heutige Challenge: <b>Versuche dein Ziel in maximal 15 Minuten zu erreichen (100 Punkte)</b>.</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="selector">
+                    Challenge-App
+                </div>
             </div>
-            <div style="vertical-align:bottom;text-align: right;"><button class="btn">Challenge me!</button>
+            <div class="row">
+                <div class='col-sm-12' id="KarteMitPunkt" />
             </div>
-              <div id="challenge"><small>Klicke auf den <b>"Challenge me!"-</b>Button, um deine heutige Aufgabe gemäß deinen Angaben zu bekommen.</small></div>
-          </div>
+            <div id="dialog" title="Datenquellen">
+                
+                <div class="sources">
+                <div><b>Quellen</b></div>
+                    <div><b>Daten</b></div>
+                    <div><a href="https://maps.openrouteservice.org/directions" target="_blank">OpenRouteService</a></div>
+                    <div>Routenplaner</div>
+                <div><a href="http://overpass-turbo.eu/" target="_blank">OpenStreetMap: Overpass Turbo</a></div>
+                    <div>DVB-Stationen, DVB-Liniennetz, Bus-Liniennetz, Carsharing-Stationen</div>
+                    <div><a href="https://register.opendata.sachsen.de/" target="_blank">Register OpenData Sachsen</a></div>
+                    <div>VVO Bus-Stationen</div>
+                <div><a href="https://opendata.dresden.de/DreiD/" target="_blank">opendata.dresden.de</a></div>
+                <div>Elbe, Parks, Waldflächen</div>
+                    <div><a href="http://wikipedia.org" target="_blank">Wikipedia</a></div>
+                    <div>Texte für Sehenswürdigkeiten</div>
+                    <div><a href="https://www.flaticon.com/free-icon/checkered-flag_67160" target="_blank">Freepik (Flaticon)</a></div>
+                    <div>Flag-Icon</div>
+                </div>
         </div>
-        <div class="selector">
-          Challenge-App
         </div>
-      </div>
-      <div class="row">
-        <div class='col-sm-12' id="KarteMitPunkt" />
-      </div>
-    </div>
-    <script>
 
-      // Karte mit Mittelpunkt Dresden erzeugen
-      var laengenGrad = 13.74291803;
-      var breitenGrad = 51.04991538;
-      var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
-      var zoomStufe = 13;
-      var minDate = moment();
-      var maxDate = moment();
-      maxDate.add('1', 'hour');
-      var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
-      // Hintergrundkarte setzen
-      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-        attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a>'
-      }).addTo(karte);
+        
+        <script>
+            // Karte mit Mittelpunkt Dresden erzeugen
+            var laengenGrad = 13.74291803;
+            var breitenGrad = 51.04991538;
+            var kartenMittelpunktKoordinaten = [breitenGrad, laengenGrad];
+            var zoomStufe = 13;
+            var minDate = moment();
+            var maxDate = moment();
+            maxDate.add('1', 'hour');
+            var karte = L.map('KarteMitPunkt').setView(kartenMittelpunktKoordinaten, zoomStufe);
+            // Hintergrundkarte setzen
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; <a href="#" onclick="alert(\'Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community\')">Esri</a> | <a href="#" id="opener"> Datenquellen</a>'
+            }).addTo(karte);
 
-      var optionen = {
-        filter: function (feature, layer) {
-          return moment(feature.properties.coordTimes).isBetween(minDate, maxDate);
-        }
-      }
-
-      var hoverZuMarkerAbstand = function (aktuelleZoomStufe) {
-        return 0.39 / Math.pow(2, aktuelleZoomStufe - 6);
-      };
-
-      function availableStations() {
-        $.post("https://webapi.vvo-online.de/tr/pointfinder", {
-          "query": "Albert",
-          "limit": 10,
-          "stopOnly": false
-        }, function (data) {
-          if (data.Status.Code == 'Ok') {
-            var points = data.Points;
-            var names = points.map(point => point.split('|')[3])
-            return names;
-          } else {
-            return "Fehler in der API";
-          }
-        });
-      }
-
-      function availableStations(input) {
-        if (!input || input.length < 3) {
-          return []
-        }
-        var inputData = {
-          "query": input,
-          "limit": 10,
-          "stopOnly": false
-        }
-        return $.ajax({
-          async: true,
-          contentType: 'application/json',
-          dataType: 'json',
-          processData: false,
-          type: 'POST',
-          url: 'https://webapi.vvo-online.de/tr/pointfinder',
-          data: JSON.stringify(inputData),
-        });
-      }
-
-      var handleAvailableStationResult = (result, response) => {
-        if (result.Status.Code == 'Ok') {
-          var points = result.Points;
-          var names = []
-          for (index in points) {
-            var point = points[index]
-            names.push({
-              id: point.split('|')[0],
-              label: point.split('|')[3]
-            })
-          }
-          response(names);
-        } else {
-          response(["Fehler in der API"]);
-        }
-      };
-
-      $(function () {
-        $('#startauswahl').autocomplete({
-          source: (request, response) => {
-            return availableStations(request).then(
-              (result) => handleAvailableStationResult(result, response))
-          },
-          minLength: 2,
-          delay: 100
-        })
-        $('#endauswahl').autocomplete({
-          source: (request, response) => {
-            return availableStations(request).then(
-              (result) => handleAvailableStationResult(result, response))
-          },
-          minLength: 2,
-          delay: 100
-        })
-        $('#startdatumsauswahl').datetimepicker({
-          defaultDate: minDate,
-        });
-        $('#enddatumsauswahl').datetimepicker({
-          defaultDate: maxDate,
-          useCurrent: false
-        });
-        $("#startdatumsauswahl").on("dp.change", function (e) {
-          minDate = moment(e.date)
-          $('#enddatumsauswahl').data("DateTimePicker").minDate(e.date);
-          schichtNeuLaden();
-        });
-        $("#enddatumsauswahl").on("dp.change", function (e) {
-          maxDate = moment(e.date)
-          $('#startdatumsauswahl').data("DateTimePicker").maxDate(e.date);
-          schichtNeuLaden();
-        });
-      });
-
-      var baseMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      });
-      $.ajaxSetup({
-        scriptCharset: "utf-8",
-        contentType: "application/json; charset=utf-8"
-      });
-      var colors = ["#ff7f00", "#377eb8", "#4daf4a"]
-      var names = ["route_car", "route_cycle", "route_walking"];
-      var labels = ["Auto", "Fahrrad", "Zu Fuß"];
-      var lineStrokeWeights = [8, 4, 2];
-
-      var collectedFeatureLineItems = []
-
-      var createGeoJsonLayer = function (data, colorName, weight) {
-        var style = {
-          weight: weight,
-          color: colorName,
-          fillOpacity: 0
-        }
-        return L.geoJson(data, {
-          style: style,
-          filter: function(feature) {
-            feature.geometry.coordinates.forEach(item => collectedFeatureLineItems.push(item))
-            return feature;
-          }
-        });
-      };
-      var layerLegendKey = function (name) {
-        var color = colors[names.indexOf(name)];
-        return "<img src='https://placehold.it/12/" + color.substr(1) + "/000000?text=+' style='display:inline'> " + labels[names.indexOf(name)]
-      };
-
-      var handleGeoJsonLayers = function (dataList) {
-        var overlayMaps = {};
-        for (var j = 0; j < dataList.length; j++) {
-          var entry = dataList[j]
-          overlayMaps[layerLegendKey(entry.name)] = entry.geoJsonLayer;
-        }
-
-        var baseMaps = {};
-        L.control.layers(baseMaps, overlayMaps).addTo(karte);
-        names.forEach(name => overlayMaps[layerLegendKey(name)].addTo(karte));
-      };
-      var promises = [];
-      for (var i = 0; i < names.length; i++) {
-        var name = names[i]
-        var color = colors[i];
-        var lineStrokeWeight = lineStrokeWeights[i];
-        var path = `data/example/${name}.geojson`;
-        var promise = Promise.all([$.getJSON(path), Promise.resolve(color),
-        Promise.resolve(lineStrokeWeight), Promise.resolve(name)])
-        promises.push(promise.then(data => {
-          return {
-            geoJsonLayer: createGeoJsonLayer(data[0], data[1], data[2]),
-            name: data[3]
-          }
-        }));
-      }
-      Promise.all(promises).then(dataList => handleGeoJsonLayers(dataList));
-
-      $('.selector').click(function () {
-        $('.dropDown').slideToggle(300);
-      });
-
-      {
-        $.getJSON("data/DVB-bus_stops.geojson", function (data) {
-          var geojsonEbene = L.geoJson(data);
-          karte.addLayer(geojsonEbene);
-        });
-      }
-      var redIcon = new L.Icon({
-        // Quelle der Icons: https://github.com/pointhi/leaflet-color-markers
-        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [0, 0],
-        shadowSize: [41, 41]
-      });
-      {
-        var teilAutoIcon = new L.Icon({
-          iconUrl: 'data/icons/teilauto.png',
-          iconSize: [30, 30],
-          iconAnchor: [12, 41],
-          popupAnchor: [0, 0],
-          shadowSize: [30, 30]
-        });
-        $.getJSON("data/Carsharing_Station.geojson", function (data) {
-          var carCharingEbene = L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-              var newCoords = feature.geometry.coordinates
-              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
-              if (dist < 0.5) {
-                return L.marker(latlng, { icon: teilAutoIcon });
-              } else {
-                return null
-              }
+            var optionen = {
+                filter: function(feature, layer) {
+                    return moment(feature.properties.coordTimes).isBetween(minDate, maxDate);
+                }
             }
-          });
-          karte.addLayer(carCharingEbene);
-        });
-      }
-      {
 
-        var busIcon = new L.Icon({
-          iconUrl: 'data/icons/bus_pin.png',
-          iconSize: [20, 20],
-          iconAnchor: [0, 0],
-          popupAnchor: [0, 0],
-          shadowSize: [12, 12]
-        });
-        $.getJSON("data/VVO-bus_stops.geojson", function (data) {
-          var busEbene = L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-              var newCoords = feature.geometry.coordinates
-              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
-              if (dist < 0.5) {
-                return L.marker(latlng, { icon: busIcon });
-              } else {
-                return null
-              }
-            }
-          });
-          karte.addLayer(busEbene);
-        });
-      }
-      {
-        var tramIcon = new L.Icon({
-          iconUrl: 'data/icons/Tram-Logo.png',
-          iconSize: [20, 20],
-          iconAnchor: [0, 0],
-          popupAnchor: [0, 0],
-          shadowSize: [12, 12]
-        });
-        $.getJSON("data/DVB-tram_stops.geojson", function (data) {
-          var tramEbene = L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-              var newCoords = feature.geometry.coordinates
-              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
-              if (dist < 0.5) {
-                return L.marker(latlng, { icon: tramIcon });
-              } else {
-                return null
-              }
-            }
-          });
-          karte.addLayer(tramEbene);
-        });
-      }
-      {
-        var mobiIcon = new L.Icon({
-          iconUrl: 'data/icons/News_332px_249px_MOBI.png',
-          iconSize: [30, 30],
-          iconAnchor: [0, 0],
-          popupAnchor: [0, 0],
-          shadowSize: [30, 30]
-        });
-        $.getJSON("data/Mobipunkte-aktiv.geojson", function (data) {
-          var mobiEbene = L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-              var newCoords = feature.geometry.coordinates
-              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
-              if (dist < 0.5) {
-                return L.marker(latlng, { icon: mobiIcon });
-              } else {
-                return null
-              }
-            }
-          });
-          karte.addLayer(mobiEbene);
-        });
-      }
-      {
-        var monuIcon = new L.Icon({
-          iconUrl: 'data/icons/sightseeing.png',
-          iconSize: [20, 20],
-          iconAnchor: [0, 0],
-          popupAnchor: [0, 0],
-          shadowSize: [30, 30]
-        });
-        $.getJSON("data/Sehenswuerdigkeiten.geojson", function (data) {
-          var monuEbene = L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-              var newCoords = feature.geometry.coordinates
-              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
-              if (dist < 0.5) {
-                return L.marker(latlng, { icon: monuIcon });
-              } else {
-                return null
-              }
-            }
-          });
-          karte.addLayer(monuEbene);
-        });
-      }
-      {
-        var parkIcon = new L.Icon({
-          iconUrl: 'data/icons/park_pin.png',
-          iconSize: [20, 20],
-          iconAnchor: [0, 0],
-          popupAnchor: [0, 0],
-          shadowSize: [14, 14]
-        });
-        $.getJSON("data/park.geojson", function (data) {
-          var parkEbene = L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-              var newCoords = feature.geometry.coordinates
-              var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), { units: 'kilometers' })
-              if (dist < 0.5) {
-                return L.marker(latlng, { icon: parkIcon });
-              } else {
-                return null
-              }
-            }
-          });
-          karte.addLayer(parkEbene);
-        });
-      }
-      {
-        var forestIcon = new L.Icon({
-          iconUrl: 'data/icons/forest.png',
-          iconSize: [30, 30],
-          iconAnchor: [0, 0],
-          popupAnchor: [0, 0],
-          shadowSize: [30, 30]
-        });
-        function forestLines(feature, color) {
-          return {
-            color: '#33a02c',
-            weight: 2,
-            opacity: .9,
-            lineJoin: 'round'
-          };
-        }
-          $.getJSON("data/waldflaechen.geojson", function (data) {
-          var forestEbene = L.geoJson(data, {
-            style: forestLines
-          });
-          karte.addLayer(forestEbene);
-        });
-      }
-      function riverLines(feature, color) {
-        return {
-          color: '#1f78b4',
-          weight: 2,
-          opacity: .9,
-          lineJoin: 'round'
-        };
-      }
-      $.getJSON("data/Elbe.geojson", function (data) {
-        var riverEbene = L.geoJson(data, {
-          style: riverLines
-        });
-        karte.addLayer(riverEbene);
-      });
+            var hoverZuMarkerAbstand = function(aktuelleZoomStufe) {
+                return 0.39 / Math.pow(2, aktuelleZoomStufe - 6);
+            };
 
-    </script>
+            function availableStations() {
+                $.post("https://webapi.vvo-online.de/tr/pointfinder", {
+                    "query": "Albert",
+                    "limit": 10,
+                    "stopOnly": false
+                }, function(data) {
+                    if (data.Status.Code == 'Ok') {
+                        var points = data.Points;
+                        var names = points.map(point => point.split('|')[3])
+                        return names;
+                    } else {
+                        return "Fehler in der API";
+                    }
+                });
+            }
+
+            function availableStations(input) {
+                if (!input || input.length < 3) {
+                    return []
+                }
+                var inputData = {
+                    "query": input,
+                    "limit": 10,
+                    "stopOnly": false
+                }
+                return $.ajax({
+                    async: true,
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    processData: false,
+                    type: 'POST',
+                    url: 'https://webapi.vvo-online.de/tr/pointfinder',
+                    data: JSON.stringify(inputData),
+                });
+            }
+
+            var handleAvailableStationResult = (result, response) => {
+                if (result.Status.Code == 'Ok') {
+                    var points = result.Points;
+                    var names = []
+                    for (index in points) {
+                        var point = points[index]
+                        names.push({
+                            id: point.split('|')[0],
+                            label: point.split('|')[3]
+                        })
+                    }
+                    response(names);
+                } else {
+                    response(["Fehler in der API"]);
+                }
+            };
+
+            $(function() {
+                $('#startauswahl').autocomplete({
+                    source: (request, response) => {
+                        return availableStations(request).then(
+                            (result) => handleAvailableStationResult(result, response))
+                    },
+                    minLength: 2,
+                    delay: 100
+                })
+                $('#endauswahl').autocomplete({
+                    source: (request, response) => {
+                        return availableStations(request).then(
+                            (result) => handleAvailableStationResult(result, response))
+                    },
+                    minLength: 2,
+                    delay: 100
+                })
+                $('#startdatumsauswahl').datetimepicker({
+                    defaultDate: minDate,
+                });
+                $('#enddatumsauswahl').datetimepicker({
+                    defaultDate: maxDate,
+                    useCurrent: false
+                });
+                $("#startdatumsauswahl").on("dp.change", function(e) {
+                    minDate = moment(e.date)
+                    $('#enddatumsauswahl').data("DateTimePicker").minDate(e.date);
+                    schichtNeuLaden();
+                });
+                $("#enddatumsauswahl").on("dp.change", function(e) {
+                    maxDate = moment(e.date)
+                    $('#startdatumsauswahl').data("DateTimePicker").maxDate(e.date);
+                    schichtNeuLaden();
+                });
+            });
+
+            var baseMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            });
+            $.ajaxSetup({
+                scriptCharset: "utf-8",
+                contentType: "application/json; charset=utf-8"
+            });
+            var colors = ["#ff7f00", "#377eb8", "#4daf4a"]
+            var names = ["route_car", "route_cycle", "route_walking"];
+            var labels = ["Auto", "Fahrrad", "Zu Fuß"];
+            var lineStrokeWeights = [8, 4, 2];
+
+            var collectedFeatureLineItems = []
+
+            var createGeoJsonLayer = function(data, colorName, weight) {
+                var style = {
+                    weight: weight,
+                    color: colorName,
+                    fillOpacity: 0
+                }
+                return L.geoJson(data, {
+                    style: style,
+                    filter: function(feature) {
+                        feature.geometry.coordinates.forEach(item => collectedFeatureLineItems.push(item))
+                        return feature;
+                    }
+                });
+            };
+            var layerLegendKey = function(name) {
+                var color = colors[names.indexOf(name)];
+                return "<img src='https://placehold.it/12/" + color.substr(1) + "/000000?text=+' style='display:inline'> " + labels[names.indexOf(name)]
+            };
+
+            var handleGeoJsonLayers = function(dataList) {
+                var overlayMaps = {};
+                for (var j = 0; j < dataList.length; j++) {
+                    var entry = dataList[j]
+                    overlayMaps[layerLegendKey(entry.name)] = entry.geoJsonLayer;
+                }
+
+                var baseMaps = {};
+                L.control.layers(baseMaps, overlayMaps).addTo(karte);
+                names.forEach(name => overlayMaps[layerLegendKey(name)].addTo(karte));
+            };
+            var promises = [];
+            for (var i = 0; i < names.length; i++) {
+                var name = names[i]
+                var color = colors[i];
+                var lineStrokeWeight = lineStrokeWeights[i];
+                var path = `data/example/${name}.geojson`;
+                var promise = Promise.all([$.getJSON(path), Promise.resolve(color),
+                    Promise.resolve(lineStrokeWeight), Promise.resolve(name)
+                ])
+                promises.push(promise.then(data => {
+                    return {
+                        geoJsonLayer: createGeoJsonLayer(data[0], data[1], data[2]),
+                        name: data[3]
+                    }
+                }));
+            }
+            Promise.all(promises).then(dataList => handleGeoJsonLayers(dataList));
+
+            $('.selector').click(function() {
+                $('.dropDown').slideToggle(300);
+            });
+            
+            $(function() {
+            $( "#dialog" ).dialog({
+               autoOpen: false,  
+                width: 500
+            });
+            $( "#opener" ).click(function() {
+               $( "#dialog" ).dialog( "open" );
+            });
+         });
+
+            {
+                $.getJSON("data/DVB-bus_stops.geojson", function(data) {
+                    var geojsonEbene = L.geoJson(data);
+                    karte.addLayer(geojsonEbene);
+                });
+            }
+            var redIcon = new L.Icon({
+                // Quelle der Icons: https://github.com/pointhi/leaflet-color-markers
+                iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+                popupAnchor: [0, 0],
+                shadowSize: [41, 41]
+            }); {
+                var teilAutoIcon = new L.Icon({
+                    iconUrl: 'data/icons/teilauto.png',
+                    iconSize: [30, 30],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [0, 0],
+                    shadowSize: [30, 30]
+                });
+                $.getJSON("data/Carsharing_Station.geojson", function(data) {
+                    var carCharingEbene = L.geoJson(data, {
+                        pointToLayer: function(feature, latlng) {
+                            var newCoords = feature.geometry.coordinates
+                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
+                                units: 'kilometers'
+                            })
+                            if (dist < 0.5) {
+                                return L.marker(latlng, {
+                                    icon: teilAutoIcon
+                                });
+                            } else {
+                                return null
+                            }
+                        }
+                    });
+                    karte.addLayer(carCharingEbene);
+                });
+            } {
+
+                var busIcon = new L.Icon({
+                    iconUrl: 'data/icons/bus_pin.png',
+                    iconSize: [20, 20],
+                    iconAnchor: [0, 0],
+                    popupAnchor: [0, 0],
+                    shadowSize: [12, 12]
+                });
+                $.getJSON("data/VVO-bus_stops.geojson", function(data) {
+                    var busEbene = L.geoJson(data, {
+                        pointToLayer: function(feature, latlng) {
+                            var newCoords = feature.geometry.coordinates
+                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
+                                units: 'kilometers'
+                            })
+                            if (dist < 0.5) {
+                                return L.marker(latlng, {
+                                    icon: busIcon
+                                });
+                            } else {
+                                return null
+                            }
+                        }
+                    });
+                    karte.addLayer(busEbene);
+                });
+            } {
+                var tramIcon = new L.Icon({
+                    iconUrl: 'data/icons/Tram-Logo.png',
+                    iconSize: [20, 20],
+                    iconAnchor: [0, 0],
+                    popupAnchor: [0, 0],
+                    shadowSize: [12, 12]
+                });
+                $.getJSON("data/DVB-tram_stops.geojson", function(data) {
+                    var tramEbene = L.geoJson(data, {
+                        pointToLayer: function(feature, latlng) {
+                            var newCoords = feature.geometry.coordinates
+                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
+                                units: 'kilometers'
+                            })
+                            if (dist < 0.5) {
+                                return L.marker(latlng, {
+                                    icon: tramIcon
+                                });
+                            } else {
+                                return null
+                            }
+                        }
+                    });
+                    karte.addLayer(tramEbene);
+                });
+            } {
+                var mobiIcon = new L.Icon({
+                    iconUrl: 'data/icons/News_332px_249px_MOBI.png',
+                    iconSize: [30, 30],
+                    iconAnchor: [0, 0],
+                    popupAnchor: [0, 0],
+                    shadowSize: [30, 30]
+                });
+                $.getJSON("data/Mobipunkte-aktiv.geojson", function(data) {
+                    var mobiEbene = L.geoJson(data, {
+                        pointToLayer: function(feature, latlng) {
+                            var newCoords = feature.geometry.coordinates
+                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
+                                units: 'kilometers'
+                            })
+                            if (dist < 0.5) {
+                                return L.marker(latlng, {
+                                    icon: mobiIcon
+                                });
+                            } else {
+                                return null
+                            }
+                        }
+                    });
+                    karte.addLayer(mobiEbene);
+                });
+            } {
+                var monuIcon = new L.Icon({
+                    iconUrl: 'data/icons/sightseeing.png',
+                    iconSize: [20, 20],
+                    iconAnchor: [0, 0],
+                    popupAnchor: [0, 0],
+                    shadowSize: [30, 30]
+                });
+                $.getJSON("data/Sehenswuerdigkeiten.geojson", function(data) {
+                    var monuEbene = L.geoJson(data, {
+                        pointToLayer: function(feature, latlng) {
+                            var newCoords = feature.geometry.coordinates
+                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
+                                units: 'kilometers'
+                            })
+                            if (dist < 0.5) {
+                                return L.marker(latlng, {
+                                    icon: monuIcon
+                                });
+                            } else {
+                                return null
+                            }
+                        }
+                    });
+                    karte.addLayer(monuEbene);
+                });
+            } {
+                var parkIcon = new L.Icon({
+                    iconUrl: 'data/icons/park_pin.png',
+                    iconSize: [20, 20],
+                    iconAnchor: [0, 0],
+                    popupAnchor: [0, 0],
+                    shadowSize: [14, 14]
+                });
+                $.getJSON("data/park.geojson", function(data) {
+                    var parkEbene = L.geoJson(data, {
+                        pointToLayer: function(feature, latlng) {
+                            var newCoords = feature.geometry.coordinates
+                            var dist = turf.pointToLineDistance(new turf.point(newCoords), new turf.lineString(collectedFeatureLineItems), {
+                                units: 'kilometers'
+                            })
+                            if (dist < 0.5) {
+                                return L.marker(latlng, {
+                                    icon: parkIcon
+                                });
+                            } else {
+                                return null
+                            }
+                        }
+                    });
+                    karte.addLayer(parkEbene);
+                });
+            } {
+                var forestIcon = new L.Icon({
+                    iconUrl: 'data/icons/forest.png',
+                    iconSize: [30, 30],
+                    iconAnchor: [0, 0],
+                    popupAnchor: [0, 0],
+                    shadowSize: [30, 30]
+                });
+
+                function forestLines(feature, color) {
+                    return {
+                        color: '#33a02c',
+                        weight: 2,
+                        opacity: .9,
+                        lineJoin: 'round'
+                    };
+                }
+                $.getJSON("data/waldflaechen.geojson", function(data) {
+                    var forestEbene = L.geoJson(data, {
+                        style: forestLines
+                    });
+                    karte.addLayer(forestEbene);
+                });
+            }
+
+            function riverLines(feature, color) {
+                return {
+                    color: '#1f78b4',
+                    weight: 2,
+                    opacity: .9,
+                    lineJoin: 'round'
+                };
+            }
+            $.getJSON("data/Elbe.geojson", function(data) {
+                var riverEbene = L.geoJson(data, {
+                    style: riverLines
+                });
+                karte.addLayer(riverEbene);
+            });
+
+        </script>
 </body>
 
 </html>

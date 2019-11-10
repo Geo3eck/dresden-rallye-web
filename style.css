@@ -1,118 +1,136 @@
 body {
-    font-family: Nunito;
+    font-family: Nunito !important;
     height: 100%;
     width: 100%;
-    background:#fefefe;
+    background: #fefefe;
     overflow: hidden;
-    padding:0;
+    padding: 0;
     margin: 0;
 }
 
 #KarteMitPunkt {
-      height: 480px;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-    }
+    height: 480px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 
-    .info {
-      padding: 6px 8px;
-      font: 14px/16px Arial, Helvetica, sans-serif;
-      background: white;
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      border-radius: 5px;
-    }
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
 
-    .info h4 {
-      margin: 0 0 5px;
-      color: #777;
-    }
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
 
-    .mapOverlayContainer {
-      position: relative;
-    }
+.mapOverlayContainer {
+    position: relative;
+}
 
-    .mapOverlay {
-      overflow: hidden;
-      background-color: #ffffff;
-      border-radius: 1em;
-      padding: 1em;
-      margin: 1em;
+.mapOverlay {
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
 
-      position: absolute;
-      z-index: 1000;
-      right: 0;
-    }
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+}
 
 
-        .dropDown {
-            padding: 20px;
-            background-color: #fefefe;
-            border-bottom: 2px solid #393e41;
-            border-left: 2px solid #393e41;
-            border-right: 2px solid #393e41;
-            display: none;
+.dropDown {
+    padding: 20px;
+    background-color: #fefefe;
+    border-bottom: 2px solid #393e41;
+    border-left: 2px solid #393e41;
+    border-right: 2px solid #393e41;
+    display: none;
 
-        }
+}
 
-        .selector {
-            position: absolute;
-            padding: 10px;
-            left: 50%;
-            /*border-radius: 10px;*/
-            background-color: #393e41;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            cursor: pointer;
-            z-index: 1005;
-            font-size: 1.1em;
-            font-weight: 300;
-            color: #fdc300;
-        }
+.selector {
+    position: absolute;
+    padding: 10px;
+    left: 50%;
+    /*border-radius: 10px;*/
+    background-color: #393e41;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    z-index: 1005;
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #fdc300;
+}
 
-        #eingabeForm {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            grid-gap: 20px;
-        }
+#eingabeForm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
 
-        #eingabeForm div:nth-child(3) {
-            grid-column: 3;
-            grid-row: 1 / 3;
-        }
+#eingabeForm div:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
 
-#challenge{
+.sources {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+.ui-front {
+    z-index: 1010;
+}
+
+
+#challenge {
     grid-row: 3 / 4;
     grid-column: 1 / 5;
     text-align: center;
 }
 
-        .logo {
-            margin: 0 5px 5px 0;
-        }
+#aufgabe {
+    padding: 5px;
+    background-color: #fdc300;
+}
 
-        .infoText {
-            height: 100%;
-            display: inline;
-            vertical-align: middle;
-        }
+.logo {
+    margin: 0 5px 5px 0;
+}
 
-        .btn {
-            display: inline-block;
-            font-weight: 300;
-            font-size: 1.1em;
-            color: #fdc300;
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
-            margin: 0 10px 0 0;
-            background-color: #393e41;
-        }
-        
-        .btn:hover{
-            background-color: #5d6163;
-            color: #fefefe;
-        }
+.infoText {
+    height: 100%;
+    display: inline;
+    vertical-align: middle;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 300;
+    font-size: 1.1em;
+    color: #fdc300;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0 10px 0 0;
+    background-color: #393e41;
+}
+
+.btn:hover {
+    background-color: #5d6163;
+    color: #fefefe;
+}
