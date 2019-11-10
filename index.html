@@ -311,7 +311,7 @@
       });
 
       {
-        $.getJSON("data/DVB-bus.geojson", function (data) {
+        $.getJSON("data/DVB-bus_stops.geojson", function (data) {
           var geojsonEbene = L.geoJson(data);
           karte.addLayer(geojsonEbene);
         });
@@ -333,13 +333,13 @@
           popupAnchor: [0, 0],
           shadowSize: [30, 30]
         });
-          $.getJSON("data/Carsharing_Station.geojson", function (data) {
-          var geojsonEbene = L.geoJson(data, {
+        $.getJSON("data/Carsharing_Station.geojson", function (data) {
+          var carCharingEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
               return L.marker(latlng, { icon: teilAutoIcon });
             }
           });
-          karte.addLayer(geojsonEbene);
+          karte.addLayer(carCharingEbene);
         });
       }
       {
@@ -350,13 +350,13 @@
           popupAnchor: [0, 0],
           shadowSize: [12, 12]
         });
-          $.getJSON("data/DVB-bus.geojson", function (data) {
-          var geojsonEbene = L.geoJson(data, {
+        $.getJSON("data/DVB-bus.geojson", function (data) {
+          var teilAutoEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
               return L.marker(latlng, { icon: teilAutoIcon });
             }
           });
-          karte.addLayer(geojsonEbene);
+          karte.addLayer(teilAutoEbene);
         });
       }
       {
@@ -367,13 +367,13 @@
           popupAnchor: [0, 0],
           shadowSize: [12, 12]
         });
-          $.getJSON("data/DVB-tram_stops.geojson", function (data) {
-          var geojsonEbene = L.geoJson(data, {
+        $.getJSON("data/DVB-tram_stops.geojson", function (data) {
+          var tramEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
               return L.marker(latlng, { icon: tramIcon });
             }
           });
-          karte.addLayer(geojsonEbene);
+          karte.addLayer(tramEbene);
         });
       }
       {
@@ -384,13 +384,13 @@
           popupAnchor: [0, 0],
           shadowSize: [30, 30]
         });
-          $.getJSON("data/Mobipunkte-aktiv.geojson", function (data) {
-          var geojsonEbene = L.geoJson(data, {
+        $.getJSON("data/Mobipunkte-aktiv.geojson", function (data) {
+          var mobiEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
               return L.marker(latlng, { icon: mobiIcon });
             }
           });
-          karte.addLayer(geojsonEbene);
+          karte.addLayer(mobiEbene);
         });
       }
       {
@@ -401,22 +401,22 @@
           popupAnchor: [0, 0],
           shadowSize: [30, 30]
         });
-          $.getJSON("data/Sehenswuerdigkeiten.geojson", function (data) {
-          var geojsonEbene = L.geoJson(data, {
+        $.getJSON("data/Sehenswuerdigkeiten.geojson", function (data) {
+          var monuEbene = L.geoJson(data, {
             pointToLayer: function (feature, latlng) {
               return L.marker(latlng, { icon: monuIcon });
             }
           });
-          karte.addLayer(geojsonEbene);
+          karte.addLayer(monuEbene);
         });
       }
-        {
+      {
         var parkIcon = new L.Icon({
           iconUrl: 'data/icons/park.png',
-          iconSize: [30, 30],
+          iconSize: [14, 14],
           iconAnchor: [0, 0],
           popupAnchor: [0, 0],
-          shadowSize: [30, 30]
+          shadowSize: [14, 14]
         });
         $.getJSON("data/park.geojson", function (data) {
           var parkEbene = L.geoJson(data, {
@@ -424,7 +424,7 @@
               return L.marker(latlng, { icon: parkIcon });
             }
           });
-          karte.addLayer(geojsonEbene);
+          karte.addLayer(parkEbene);
         });
       }
       {
@@ -435,17 +435,36 @@
           popupAnchor: [0, 0],
           shadowSize: [30, 30]
         });
-        $.getJSON("data/waldflaechen.geojson", function (data) {
-          var parkEbene = L.geoJson(data, {
-            pointToLayer: function (feature, latlng) {
-              return L.marker(latlng, { icon: forestIcon });
-            }
+        function forestLines(feature, color) {
+          return {
+            color: 'green',
+            weight: 10,
+            opacity: .7,
+            lineJoin: 'round'
+          };
+        }
+          $.getJSON("data/waldflaechen.geojson", function (data) {
+          var forestEbene = L.geoJson(data, {
+            style: forestLines
           });
-          karte.addLayer(geojsonEbene);
+          karte.addLayer(forestEbene);
         });
       }
+      function riverLines(feature, color) {
+        return {
+          color: 'blue',
+          weight: 10,
+          opacity: .7,
+          lineJoin: 'round'
+        };
+      }
+      $.getJSON("data/Elbe.geojson", function (data) {
+        var riverEbene = L.geoJson(data, {
+          style: riverLines
+        });
+        karte.addLayer(riverEbene);
+      });
 
-      
     </script>
 </body>
 
