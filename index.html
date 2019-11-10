@@ -273,6 +273,31 @@
         return "<span style='color: " + color + "'> " + labels[names.indexOf(name)] + "</span>"
       };
 
+
+
+      var getChallenge = function(lineGeoJSON, pointCollectionGeoJSON) {
+        var challengeIndex = none;
+        var challengeDistance = Infinity;
+
+          for (let i = 0; i < lineGeoJSON.features[0].geometry.coordinates.length; i++) {
+            const fromCoordinate = lineGeoJSON.features[0].geometry.coordinates[i];
+          for (let j = 0; j < pointCollectionGeoJSON.features.length; j++) {
+            const toCoordinate = pointCollectionGeoJSON.features[j].geometry.coordinates;
+            let distance = turf.distance(turf.point(fromCoordinate), turf.point(toCoordinate), {units: 'kilometers'})
+          
+            if (distance < challengeDistance) {
+              challengeDistance = distance;
+              challengeIndex = j;
+            }
+          }
+        }
+        return {challengeIndex: challengeIndex, challengeDistance: challengeDistance}
+      }
+
+      
+
+
+
       var handleGeoJsonLayers = function (dataList) {
         var overlayMaps = {};
         for (var j = 0; j < dataList.length; j++) {
