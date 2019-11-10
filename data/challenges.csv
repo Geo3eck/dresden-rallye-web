@@ -1,0 +1,53 @@
+Challenge;Level;Zeitaufwand ;Kategorie ;Schrittzähler ;layer_1 ;layer_2;layer_3;layer_4;layer_5;layer_6;layer_7
+"Bewältige deine Strecke zu Fuß.
+";1;1;Verkehrsmittel;FALSE;;;;;;;
+"Bewältige deine Strecke mit der Straßenbahn.
+";1;1;Verkehrsmittel;FALSE;DVB-tram;"DVB-tram_stops
+";;;;;
+Bewältige deine Strecke mit dem Bus.;1;1;Verkehrsmittel;FALSE;VVO-bus;VVO-bus_stops;;;;;
+Bewältige deine Strecke mit dem Fahrrad (eigenes oder Leihfahrrad). ;1;1;Verkehrsmittel;FALSE;bikestations;Mobipunkte-aktiv;;;;;
+Bewältige deine Strecke mit einem Car- oder Ridesharing.;2;1;Verkehrsmittel;FALSE;Mobipunkte-aktiv;Carsharing_Station;;;;;
+"Bewältige deine Strecke zu Fuß und mit dem Fahrrad (eigenes oder Leihfahrrad). 
+";1;1;Verkehrsmittel;FALSE;bikestations;Mobipunkte-aktiv;;;;;
+Bewältige deine Strecke mit dem Fahrrad (eigenes oder Leihfahrrad) und der Straßenbahn. ;2;1;Verkehrsmittel;FALSE;DVB-tram;"DVB-tram_stops
+";bikestations;Mobipunkte-aktiv;;;
+Bewältige deine Strecke mit der Straßenbahn und einem Carsharing.;3;1;Verkehrsmittel;FALSE;DVB-tram;"DVB-tram_stops
+";Mobipunkte-aktiv;Carsharing_Station;;;
+Laufe auf deiner Strecke mindestens 1000 Schritte. ;2;2;Erholung;TRUE;;;;;;;
+Laufe auf deiner Strecke mindestens 2000 Schritte. ;2;2;Erholung;TRUE;;;;;;;
+Laufe auf deiner Strecke mindestens 5000 Schritte. ;3;3;Erholung;TRUE;;;;;;;
+Laufe auf deiner Strecke mindestens 500 Schritte. ;1;1;Erholung;TRUE;;;;;;;
+"Bewältige deine Strecke ohne Straßenbahn.
+";2;2;Verkehrsmittel;FALSE;VVO-bus;VVO-bus_stops;bikestations;Mobipunkte-aktiv;Carsharing_Station;;
+Bewältige deine Strecke ohne Bus.;1;2;Verkehrsmittel;FALSE;DVB-tram;"DVB-tram_stops
+";bikestations;Mobipunkte-aktiv;Carsharing_Station;;
+Bewältige deine Strecke ohne Fahrrad (eigenes oder Leihfahrrad). ;1;1;Verkehrsmittel;FALSE;VVO-bus;VVO-bus_stops;DVB-tram;"DVB-tram_stops
+";Carsharing_Station;;
+Bewältige deine Strecke ohne Car- oder Ridesharing.;1;1;Verkehrsmittel;FALSE;VVO-bus;VVO-bus_stops;bikestations;Mobipunkte-aktiv;DVB-tram;"DVB-tram_stops
+";
+Bewältige deine Strecke ohne Fahrrad oder Straßenbahn. ;2;2;Verkehrsmittel;FALSE;VVO-bus;VVO-bus_stops;Carsharing_Station;;;;
+Bewältige deine Strecke ohne Straßenbahn oder Carsharing.;2;2;Verkehrsmittel;FALSE;VVO-bus;VVO-bus_stops;bikestations;Mobipunkte-aktiv;;;
+Benutze mindestens 2 verschiedene Fortbewegungsmittel.;2;2;Verkehrsmittel;FALSE;VVO-bus;VVO-bus_stops;bikestations;Mobipunkte-aktiv;DVB-tram;"DVB-tram_stops
+";Carsharing_Station
+"Nutze mindestens 1 Sharing-Angebot (ÖPNV, Leihfahrrad, Car-/Ridesharing).";1;1;Verkehrsmittel;FALSE;VVO-bus;VVO-bus_stops;bikestations;Mobipunkte-aktiv;DVB-tram;"DVB-tram_stops
+";Carsharing_Station
+Versuche dein Ziel in maximal 15 Minuten zu erreichen.;3;1;Zeit;FALSE;;;;;;;
+Versuche dein Ziel in maximal 25 Minuten zu erreichen.;2;1;Zeit;FALSE;;;;;;;
+Versuche dein Ziel in maximal 35 Minuten zu erreichen.;1;1;Zeit;FALSE;;;;;;;
+Versuche dein Ziel in maximal 45 Minuten zu erreichen.;1;2;Zeit;FALSE;;;;;;;
+"Gib weniger als 2 € aus, um dein Ziel zu erreichen (ohne Schwarzfahren). ";3;1;Geld;FALSE;VVO-bus;VVO-bus_stops;bikestations;Mobipunkte-aktiv;DVB-tram;"DVB-tram_stops
+";Carsharing_Station
+"Gib weniger als 3 € aus, um dein Ziel zu erreichen (ohne Schwarzfahren). ";2;1;Geld;FALSE;VVO-bus;VVO-bus_stops;bikestations;Mobipunkte-aktiv;DVB-tram;"DVB-tram_stops
+";Carsharing_Station
+"Gib weniger als 5 € aus, um dein Ziel zu erreichen (ohne Schwarzfahren). ";1;1;Geld;FALSE;VVO-bus;VVO-bus_stops;bikestations;Mobipunkte-aktiv;DVB-tram;"DVB-tram_stops
+";Carsharing_Station
+Besuche eine Sehenswürdigkeit auf deiner Strecke.;2;2;Routenrestriktion;FALSE;Sehenswuerdigkeiten;;;;;;
+Überquere die Elbe einmal auf deiner Strecke.;2;2;Routenrestriktion;FALSE;Elbe;;;;;;
+Überquere die Elbe zwei mal auf deiner Strecke.;3;3;Routenrestriktion;FALSE;"Elbe
+";;;;;;
+"Überquere maximal 10 Ampeln auf deiner Strecke. 
+";3;2;Routenrestriktion;FALSE;;;;;;;
+Biege höchstens 3 Mal links ab. ;3;2;Routenrestriktion;FALSE;;;;;;;
+Verweile mindestens 5 Minuten in einem Park. ;2;3;Erholung;FALSE;"parks
+";;;;;;
+Suche einen Geocache im Wald. ;3;3;Erholung;FALSE;waldflaechen;;;;;;
