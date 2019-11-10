@@ -4,6 +4,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Dresden Rallye: Challenge your daily route</title>
+    <link rel="shortcut icon" href="data/icons/fav.ico" />
+
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
     integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
     crossorigin="" />
@@ -37,8 +39,8 @@
   <div class="mapOverlayContainer">
     <div class="container">
       <div class="row"
-        style="background-color:#eeeeee;            border-bottom: 2px solid #393e41; line-height: 1;padding:10px 5px 5px 0;">
-        <img src="https://placehold.it/250x50/393e41/ffffff?text=Logo" class="logo" align="left" />
+        style="background-color:#eeeeee;            border-bottom: 2px solid #393e41; line-height: 1;padding:10px 5px 5px 5px;">
+        <img src="data/icons/logo.png" class="logo" align="left" />
         <div class="infoText">
           Mit der DresDen Ralley kommst du aus deiner Komfortzone raus und bringst wieder frischen Wind in deinen
           Alltagstrott! Mit unseren Challenges bist du gefordert kreativ von A nach B zu kommen. Einfach das Formular
@@ -90,7 +92,7 @@
                 <label class="custom-control-label" for="customSwitches">Hast du einen Schrittzähler?</label>
               </form>
             </div>
-            <div></div>
+            <div>  </div>
             <div>
               früheste Abfahrtzeit
               <div class="form-group">
@@ -113,12 +115,13 @@
                 </div>
               </div>
             </div>
-            <div style="vertical-align:bottom;text-align: right;"><button class="btn">Start</button>
+            <div style="vertical-align:bottom;text-align: right;"><button class="btn">Challenge me!</button>
             </div>
+              <div id="challenge"><small>Klicke auf den <b>"Challenge me!"-</b>Button, um deine heutige Aufgabe gemäß deinen Angaben zu bekommen.</small></div>
           </div>
         </div>
         <div class="selector">
-          Challenge me!
+          Challenge-App
         </div>
       </div>
       <div class="row">
