@@ -318,7 +318,7 @@
 
 
         var baseMaps = {};
-        L.control.layers(baseMaps, overlayMaps).addTo(karte);
+        L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(karte);
         names.forEach(name => visible ? overlayMaps[layerLegendKey(name)].addTo(karte) : null);
       };
 
@@ -498,7 +498,7 @@
                 }
               }
             });
-            karte.addLayer(monuEbene);
+            //karte.addLayer(monuEbene);
           });
         }
         if (visible) {
@@ -521,7 +521,7 @@
                 }
               }
             });
-            karte.addLayer(parkEbene);
+            //karte.addLayer(parkEbene);
           });
         }
         if (visible) {
@@ -544,7 +544,7 @@
             var forestEbene = L.geoJson(data, {
               style: forestLines
             });
-            karte.addLayer(forestEbene);
+            //karte.addLayer(forestEbene);
           });
         }
         if (visible) {
@@ -560,7 +560,7 @@
             var riverEbene = L.geoJson(data, {
               style: riverLines
             });
-            karte.addLayer(riverEbene);
+            //karte.addLayer(riverEbene);
           });
         }
       }
